@@ -30,7 +30,7 @@ const Navbar = () => {
           {navLinks.map((link, index) => (
             <motion.a
               key={index}
-              href={`#${link.toLowerCase()}`}
+              href={`/${link.toLowerCase()}`}
               whileHover={{ scale: 1.05 }}
               className="relative group transition-all duration-300"
             >
