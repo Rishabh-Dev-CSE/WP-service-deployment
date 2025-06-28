@@ -22,13 +22,9 @@ const phoneVariants = {
 
 const FeatureSection = () => {
   return (
-    <section
-      id="features"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white relative overflow-hidden py-16 sm:py-20"
-      
-    >
+   <section className="w-full py-24 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
       <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center z-10 gap-12">
-        
+
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

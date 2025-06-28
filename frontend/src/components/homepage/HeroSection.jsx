@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LuBrush, LuPenTool, LuSparkles } from "react-icons/lu";
 import GlowOrbSvg from "./GlowOrbSvg";
+import AnimatedWaves from "../../animatedwaves/AnimatedWaves";
 
 const HeroSection = () => {
   return (
@@ -9,8 +10,9 @@ const HeroSection = () => {
       id="home"
       className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white relative overflow-hidden pt-30 pb-20"
     >
+       <AnimatedWaves />
       <div className="max-w-7xl w-full px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center justify-between z-10 gap-12 md:gap-0">
-        
+
         {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -36,7 +38,7 @@ const HeroSection = () => {
               Let’s Talk
             </a>
             <a
-              href="#projects"
+              href="./start-project"
               className="border border-cyan-400 text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-white transition w-full sm:w-auto text-center"
             >
               Start Project

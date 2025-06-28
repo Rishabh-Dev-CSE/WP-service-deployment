@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePageRoute from "./homepage/HomePageRoute";
 import ScrollToTop from "./ScrollToTop";
+import StartProjectRoute from "./clientproject/StartProjectRoute";
 
 const AppRouter = () => {
     return (
@@ -9,7 +10,8 @@ const AppRouter = () => {
             <ScrollToTop />
 
             <Routes>
-                 <Route path="/home" element={<HomePageRoute />} />
+                 <Route path="/" element={<HomePageRoute />} />
+                 <Route path="/start-project" element={<StartProjectRoute />} />
             </Routes>
 
         </BrowserRouter>

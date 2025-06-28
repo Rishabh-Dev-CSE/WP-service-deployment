@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-gray-300 pt-14 pb-8 px-4 sm:px-6 lg:px-12">
-      
+
       {/* Newsletter Section */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -12,11 +12,11 @@ const Footer = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
         className="
-          max-w-4xl mx-auto 
-          bg-[#15162b] 
-          rounded-2xl 
-          p-6 sm:p-10 
-          flex flex-col gap-6 
+          max-w-4xl mx-auto
+          bg-[#15162b]
+          rounded-2xl
+          p-6 sm:p-10
+          flex flex-col gap-6
           shadow-[0_0_30px_#00ffff30]
         "
       >
@@ -25,23 +25,23 @@ const Footer = () => {
             Subscribe to my newsletter
           </h3>
           <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-            Get updates on my latest projects, articles, and tips on frontend development.
+            Get updates on my latest projects, articles, and tips on frontend and backend development.
           </p>
         </div>
-        
+
         <form className="flex flex-col sm:flex-row gap-3 mx-auto w-full max-w-lg">
           <input
             type="email"
             placeholder="Enter your email"
             className="
-              flex-1 
-              bg-[#0f0c29] 
-              border border-gray-700 
-              text-gray-200 
-              px-4 py-3 
-              rounded-lg 
-              focus:outline-none 
-              focus:border-cyan-400 
+              flex-1
+              bg-[#0f0c29]
+              border border-gray-700
+              text-gray-200
+              px-4 py-3
+              rounded-lg
+              focus:outline-none
+              focus:border-cyan-400
               transition
               text-sm sm:text-base
             "
@@ -49,12 +49,12 @@ const Footer = () => {
           <button
             type="submit"
             className="
-              bg-cyan-400 
-              hover:bg-cyan-300 
-              text-[#0f0c29] 
-              font-semibold 
-              px-5 py-3 
-              rounded-lg 
+              bg-cyan-400
+              hover:bg-cyan-300
+              text-[#0f0c29]
+              font-semibold
+              px-5 py-3
+              rounded-lg
               transition
               text-sm sm:text-base
             "
@@ -71,11 +71,11 @@ const Footer = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className="
-          max-w-4xl mx-auto 
-          mt-14 
-          border-t border-gray-800 
-          pt-10 
-          flex flex-col items-center 
+          max-w-4xl mx-auto
+          mt-14
+          border-t border-gray-800
+          pt-10
+          flex flex-col items-center
           gap-8
         "
       >
@@ -85,17 +85,17 @@ const Footer = () => {
             Rishabh Suryavanshi
           </h4>
           <p className="text-gray-400 text-sm sm:text-base max-w-md mx-auto">
-            Frontend Developer crafting modern, responsive, and intuitive experiences.
+            Fullstack Developer crafting modern, responsive, and intuitive experiences.
           </p>
         </div>
 
         {/* Links (mobile=column, desktop=row) */}
         <div className="
-          flex flex-col md:flex-row 
-          flex-wrap 
-          justify-center 
-          items-center 
-          gap-4 
+          flex flex-col md:flex-row
+          flex-wrap
+          justify-center
+          items-center
+          gap-4
           text-center
         ">
           <a href="#about" className="hover:text-cyan-400 transition text-sm sm:text-base">About</a>
