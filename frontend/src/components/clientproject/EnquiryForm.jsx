@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaUser, FaEnvelope, FaBuilding, FaCommentDots, FaPaperPlane } from "react-icons/fa";
 
 const EnquiryForm = () => {
+  // Form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,15 +11,50 @@ const EnquiryForm = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
+  // Handle input change
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submit
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Thanks for your enquiry.");
-    setFormData({ name: "", email: "", company: "", message: "" });
+    setLoading(true);
+
+    try {
+      const response = await fetch('http://localhost:8000/enquiry', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)      // ✅ FIXED HERE
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      console.log('Server Response:', data);
+      alert('Message sent successfully!');
+      // Optionally clear form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        message: "",
+      });
+    } catch (err) {
+      console.error(err);
+      alert('Failed to send Enquiry.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle =
@@ -26,7 +62,7 @@ const EnquiryForm = () => {
 
   const inputVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: i => ({
+    visible: (i) => ({
       opacity: 1,
       y: 0,
       transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
@@ -148,9 +184,10 @@ const EnquiryForm = () => {
             type="submit"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
+            disabled={loading}
             className="w-full py-3 mt-4 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 rounded-lg font-semibold text-white shadow-md flex items-center justify-center gap-2"
           >
-            <FaPaperPlane /> Send Enquiry
+            <FaPaperPlane /> {loading ? "Sending..." : "Send Enquiry"}
           </motion.button>
         </motion.form>
       </div>

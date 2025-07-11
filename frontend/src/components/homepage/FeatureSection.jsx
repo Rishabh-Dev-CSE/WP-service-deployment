@@ -22,8 +22,8 @@ const phoneVariants = {
 
 const FeatureSection = () => {
   return (
-   <section className="w-full py-24 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
-      <div className="max-w-7xl w-full px-4 sm:px-6 lg:px-8 flex flex-col items-center z-10 gap-12">
+    <section className="w-full py-24 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
 
         {/* Heading */}
         <motion.h2
@@ -61,7 +61,7 @@ const FeatureSection = () => {
             </div>
           </motion.div>
 
-          {/* Center Phone */}
+          {/* Center Phone with VIDEO */}
           <motion.div
             variants={{
               hidden: phoneVariants.hiddenCenter,
@@ -70,9 +70,12 @@ const FeatureSection = () => {
             className="relative w-44 h-80 sm:w-52 sm:h-[420px] md:w-60 md:h-[450px] bg-black rounded-[2rem] border-4 border-gray-800 shadow-xl hover:shadow-cyan-500/70 z-10 hover:scale-110 transition-all duration-300"
           >
             <div className="w-full h-full rounded-[1.7rem] overflow-hidden">
-              <img
-                src="/src/assets/feature/feature3.jpeg"
-                alt="Intuitive Interface"
+              <video
+                src="/src/assets/feature/center-phone-video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover"
               />
             </div>

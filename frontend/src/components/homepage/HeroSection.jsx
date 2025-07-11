@@ -10,7 +10,7 @@ const HeroSection = () => {
       id="home"
       className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white relative overflow-hidden pt-30 pb-20"
     >
-       <AnimatedWaves />
+       {/* <AnimatedWaves /> */}
       <div className="max-w-7xl w-full px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center justify-between z-10 gap-12 md:gap-0">
 
         {/* Left Side */}
