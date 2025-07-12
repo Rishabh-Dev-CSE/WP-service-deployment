@@ -10,27 +10,27 @@ import "swiper/css/navigation";
 const clients = [
   {
     name: "Acme Corp",
-    image: "./src/assets/clientpics/client1.jpeg",
+    image: "/clientpics/client1.jpeg",
     bio: "Acme Corp is a global leader in innovative solutions, helping businesses transform their workflows and achieve new levels of success."
   },
   {
     name: "Globex Inc",
-    image: "./src/assets/clientpics/client2.jpeg",
+    image: "/clientpics/client2.jpeg",
     bio: "Globex Inc partners with enterprises worldwide to deliver robust, scalable, and secure cloud-based services."
   },
   {
     name: "Stark Industries",
-    image: "./src/assets/clientpics/client3.jpeg",
+    image: "/clientpics/client3.jpeg",
     bio: "Stark Industries pioneers advanced technologies and sustainable energy solutions, pushing the boundaries of what's possible."
   },
   {
     name: "Wayne Enterprises",
-    image: "./src/assets/clientpics/client4.jpeg",
+    image: "/clientpics/client4.jpeg",
     bio: "Wayne Enterprises supports global development through strategic investments in healthcare, technology, and green energy."
   },
   {
     name: "Umbrella Corp",
-    image: "./src/assets/clientpics/client5.jpeg",
+    image: "/clientpics/client5.jpeg",
     bio: "Umbrella Corporation leads in biotech research, dedicated to enhancing human health and longevity."
   },
 ];

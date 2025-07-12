@@ -98,12 +98,15 @@ const Footer = () => {
           gap-4
           text-center
         ">
-          <a href="#about" className="hover:text-cyan-400 transition text-sm sm:text-base">About</a>
           <a href="#projects" className="hover:text-cyan-400 transition text-sm sm:text-base">Projects</a>
           <a href="#skills" className="hover:text-cyan-400 transition text-sm sm:text-base">Skills</a>
           <a href="#contact" className="hover:text-cyan-400 transition text-sm sm:text-base">Contact</a>
-          <a href="#privacy" className="hover:text-cyan-400 transition text-sm sm:text-base">Privacy Policy</a>
-          <a href="#terms" className="hover:text-cyan-400 transition text-sm sm:text-base">Terms of Service</a>
+          <a href="#privacy" className="hover:text-cyan-400 transition text-sm sm:text-base">Case Studies </a>
+          <a href="#about"  className="hover:text-cyan-400 transition text-sm sm:text-base">About</a>
+          <a href="blog"  className="hover:text-cyan-400 transition text-sm sm:text-base">Blog</a>
+          <a href="#terms" target="_blank" className="hover:text-cyan-400 transition text-sm sm:text-base">Legal Pages</a>
+          <a href="#terms"  className="hover:text-cyan-400 transition text-sm sm:text-base">FAQ ?</a>
+
         </div>
       </motion.div>
 

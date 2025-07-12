@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
 // Navigation Links
 const navLinks = [
   { name: "Home", path: "/" },
+  {name:"Feature", path:"/feature"},
   { name: "Projects", path: "/projects" },
-  { name: "Skills", path: "/skills" },
-  { name: "Experience", path: "/experience" },
+  { name: "Princing", path: "/princing" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
 ];
@@ -91,7 +91,7 @@ const Navbar = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-2 text-2xl font-extrabold tracking-tight"
         >
-          <img src="/src/assets/logo/my-logo.png" alt="Logo" className="w-9 h-9" />
+          <img src="/logo/my-logo.png" alt="Logo" className="w-9 h-9" />
           <span className="rgb-animate-text">SKC.Dev</span>
         </motion.div>
 
@@ -127,7 +127,7 @@ const Navbar = () => {
             to="/contact"
             className="relative px-5 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md"
           >
-            Let’s Talk
+            Login/Signup
           </Link>
         </motion.div>
 

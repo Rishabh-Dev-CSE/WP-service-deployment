@@ -5,6 +5,7 @@ import FeatureSection  from "./FeatureSection";
 import TopClientsCarousel from "./ClientBIO";
 import ServicesSection from "./Services";
 import DailyOrderStatus from "./OrderStatus";
+import EnquiryForm from "../clientproject/EnquiryForm";
 import Footer from "../footer/Footer";
 
 const HomePageRoute = () => {
@@ -13,9 +14,10 @@ const HomePageRoute = () => {
             <Navbar />
             <HeroSection />
             <FeatureSection />
-            <TopClientsCarousel />
             <ServicesSection />
             <DailyOrderStatus />
+            <TopClientsCarousel />
+            <EnquiryForm />
             <Footer />
 
         </div>

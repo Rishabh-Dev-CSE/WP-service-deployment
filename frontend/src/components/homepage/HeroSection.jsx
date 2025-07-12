@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { LuBrush, LuPenTool, LuSparkles } from "react-icons/lu";
 import GlowOrbSvg from "./GlowOrbSvg";
 import AnimatedWaves from "../../animatedwaves/AnimatedWaves";
@@ -37,12 +38,16 @@ const HeroSection = () => {
             >
               Let’s Talk
             </a>
-            <a
-              href="./start-project"
-              className="border border-cyan-400 text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-white transition w-full sm:w-auto text-center"
+            <Link 
+            to={"/start-project"}
             >
+            <p
+              className="border border-cyan-400 text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-white transition w-full sm:w-auto text-center"
+              >
               Start Project
-            </a>
+            </p>
+
+              </Link>
           </div>
         </motion.div>
 
