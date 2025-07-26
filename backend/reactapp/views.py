@@ -8,7 +8,6 @@ from  django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import HTMLFormRenderer
 from .models import *
 
-
 @csrf_exempt
 def enquiry_view(request):
     if request.method == "POST":
@@ -22,6 +21,21 @@ def enquiry_view(request):
        
         return  JsonResponse({'status':'success'} )
     return  JsonResponse({'status':'error'} )
+
+
+@csrf_exempt
+@api_view(['POST'])
+def subscriberUser(request):
+    if request.method == "POST":
+        name = request.data.get('name')
+        email = request.data.get('email')
+        sub = SubscriberUser.objects.create(name = name , email=email)
+
+        return JsonResponse({'status':'success'})
+    return JsonResponse({'status':'error'})
+
+
+
 
 
 

@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
+  let [subscribe, setSubscribe] = useState({ name: ' ', email: '' })
+
+  const handleChange = e => {
+    setSubscribe({ ...subscribe, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    try {
+      const res = await fetch('http://localhost:8000/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(subscribe)
+      });
+      const data = await res.json();
+      console.log('Response', data);
+      alert('Thanks for subscribing 😊 ', data)
+      setSubscribe({ name: '', email: '' });
+    } catch (error) {
+      console.error('Error Sending data', error)
+      alert('Error Sending data', error)
+    }
+  }
+
+
   return (
     <footer className="bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-gray-300 pt-14 pb-8 px-4 sm:px-6 lg:px-12">
 
@@ -29,10 +56,13 @@ const Footer = () => {
           </p>
         </div>
 
-        <form className="flex flex-col sm:flex-row gap-3 mx-auto w-full max-w-lg">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 mx-auto w-full max-w-lg">
           <input
             type="email"
+            name="email"
+              value={subscribe.email} 
             placeholder="Enter your email"
+            onChange={handleChange}
             className="
               flex-1
               bg-[#0f0c29]

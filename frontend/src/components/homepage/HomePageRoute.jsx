@@ -6,6 +6,7 @@ import TopClientsCarousel from "./ClientBIO";
 import ServicesSection from "./Services";
 import DailyOrderStatus from "./OrderStatus";
 import Footer from "../footer/Footer";
+// import LoginAndSend from "./LoginAndSend";
 
 const HomePageRoute = () => {
     return (
@@ -16,6 +17,7 @@ const HomePageRoute = () => {
             <TopClientsCarousel />
             <ServicesSection />
             <DailyOrderStatus />
+            {/* <LoginAndSend /> */}
             <Footer />
 
         </div>
