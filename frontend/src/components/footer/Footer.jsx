@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Footer = () => {
-  let [subscribe, setSubscribe] = useState({ name: ' ', email: '' })
+  let [subscribe, setSubscribe] = useState({ name: '', email: '' })
 
   const handleChange = e => {
     setSubscribe({ ...subscribe, [e.target.name]: e.target.value });
@@ -10,6 +10,16 @@ const Footer = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
+
+    // Trim and validate
+    const name = subscribe.name.trim();//optional hai abhi ke liye
+    const email = subscribe.email.trim();
+
+    if (!email) {
+      alert("Please enter your email address 🙌😒");
+      return;
+    }
+
     try {
       const res = await fetch('http://localhost:8000/subscribe', {
         method: 'POST',
@@ -60,7 +70,7 @@ const Footer = () => {
           <input
             type="email"
             name="email"
-              value={subscribe.email} 
+            value={subscribe.email}
             placeholder="Enter your email"
             onChange={handleChange}
             className="

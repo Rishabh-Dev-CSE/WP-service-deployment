@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePageRoute from "./homepage/HomePageRoute";
 import ScrollToTop from "./ScrollToTop";
 import StartProjectRoute from "./clientproject/StartProjectRoute";
+import AboutRoute from "./about/AboutRoute";
+import ContactRoute from "./contact/ContactRoute";
 
 const AppRouter = () => {
     return (
@@ -12,6 +14,8 @@ const AppRouter = () => {
             <Routes>
                  <Route path="/" element={<HomePageRoute />} />
                  <Route path="/start-project" element={<StartProjectRoute />} />
+                 <Route path="/about-us" element={<AboutRoute />} />
+                 <Route path="/contact" element={<ContactRoute />} />
             </Routes>
 
         </BrowserRouter>

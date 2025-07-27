@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
-  { name: "Skills", path: "/skills" },
+  { name: "Services", path: "/services" },
   { name: "Experience", path: "/experience" },
-  { name: "About", path: "/about" },
+  { name: "About", path: "/about-us" },
   { name: "Contact", path: "/contact" },
 ];
 
 // Framer Motion Variants
-const genieMenuVariants = {
+const genieMenuVariants = { 
   initial: {
     clipPath: "inset(0% 0% 0% 0%)",
     opacity: 1,
@@ -124,10 +124,10 @@ const Navbar = () => {
           className="hidden md:block"
         >
           <Link
-            to="/contact"
+            to="#"
             className="relative px-5 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md"
           >
-            Let’s Talk
+           Signup / Login
           </Link>
         </motion.div>
 
@@ -190,7 +190,7 @@ const Navbar = () => {
                   onClick={() => setIsMobileOpen(false)}
                   className="mt-2 inline-block text-center px-4 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md"
                 >
-                  Let’s Talk
+                  Signup / Login
                 </Link>
               </motion.div>
             </motion.nav>

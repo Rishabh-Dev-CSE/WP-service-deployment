@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { LuBrush, LuPenTool, LuSparkles } from "react-icons/lu";
 import GlowOrbSvg from "./GlowOrbSvg";
 import AnimatedWaves from "../../animatedwaves/AnimatedWaves";
@@ -8,17 +9,17 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white relative overflow-hidden pt-30 pb-20"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white relative pb-0"
     >
-       {/* <AnimatedWaves /> */}
-      <div className="max-w-7xl w-full px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center justify-between z-10 gap-12 md:gap-0">
-
+      {/* <AnimatedWaves /> */}
+      <div className="max-w-7xl w-full px-0 sm:px-2 md:px-4 flex flex-col md:flex-row items-center justify-between z-10 gap-1 md:gap-0">
         {/* Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="flex-1 text-center md:text-left space-y-6"
+        // style={{paddingLeft:-200}}
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
             Let’s Work <br className="hidden md:block" />
@@ -37,12 +38,20 @@ const HeroSection = () => {
             >
               Let’s Talk
             </a>
-            <a
-              href="./start-project"
-              className="border border-cyan-400 text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-white transition w-full sm:w-auto text-center"
+
+
+            <Link
+              to={'/start-project'}
             >
-              Start Project
-            </a>
+              <button
+                className="border border-cyan-400 text-cyan-400 px-6 py-3 rounded-full font-semibold hover:bg-cyan-400 hover:text-white transition w-full sm:w-auto text-center"
+              >
+                Start Project
+              </button>
+            </Link>
+
+
+
           </div>
         </motion.div>
 

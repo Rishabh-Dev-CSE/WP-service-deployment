@@ -14,4 +14,4 @@ class SubscriberUser(models.Model):
     date_and_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.email
