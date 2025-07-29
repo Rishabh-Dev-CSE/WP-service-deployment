@@ -119,7 +119,7 @@ const EnquiryForm = () => {
             <FaPaperPlane />
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold  mb-6 leading-tight"
-            style={{fontSize:70}}
+            style={{fontSize:"10vmin"}}
           >
             Let’s Build <span className="text-cyan-400">Something Real</span>
           </h2>

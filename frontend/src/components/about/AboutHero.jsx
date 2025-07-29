@@ -21,7 +21,7 @@ const AboutHero = () => {
         className="relative z-10 text-center max-w-3xl"
       >
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-          <span className="text-cyan-400">skc.dev</span> is Where
+          <span className="text-cyan-400">WP</span> Service
           <br />
           <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             Code Meets Velocity 🚀

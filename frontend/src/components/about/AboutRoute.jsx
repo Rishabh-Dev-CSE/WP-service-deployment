@@ -3,6 +3,7 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import AboutHero from "./AboutHero";
 import MissionSection from "./MissionSection";
+import MeetOurTeam from "./TeamBio";
 
 
 const AboutRoute = () => {
@@ -11,6 +12,7 @@ const AboutRoute = () => {
         <Navbar />
         <AboutHero />
         <MissionSection />
+        <MeetOurTeam />
         <Footer />
 
         </>

@@ -38,7 +38,7 @@ const MissionSection = () => {
           Our <span className="text-cyan-400">Mission</span>
         </h2>
         <p className="text-gray-300 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-          At <span className="text-white font-semibold">skc.dev</span>, we're not just building tools —<br />
+          At <span className="text-white font-semibold">WP service</span>, we're not just building tools —<br />
           <span className="inline-block mt-2 bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text font-semibold">
             We’re architecting the future of developer infrastructure.
           </span>

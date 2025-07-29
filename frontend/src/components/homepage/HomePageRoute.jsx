@@ -6,7 +6,7 @@ import TopClientsCarousel from "./ClientBIO";
 import ServicesSection from "./Services";
 import DailyOrderStatus from "./OrderStatus";
 import Footer from "../footer/Footer";
-import ParallaxSections from "../testfolder/Sections";
+// import ParallaxSections from "../testfolder/Sections";
 // import LoginAndSend from "./LoginAndSend";
 
 const HomePageRoute = () => {
@@ -18,7 +18,7 @@ const HomePageRoute = () => {
             <FeatureSection />
             <TopClientsCarousel />
             <DailyOrderStatus />
-            <ParallaxSections />
+            {/* <ParallaxSections /> */}
             {/* <LoginAndSend /> */}
             <Footer />
 
