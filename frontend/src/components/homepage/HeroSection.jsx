@@ -5,7 +5,7 @@ import { LuBrush, LuPenTool, LuSparkles } from "react-icons/lu";
 import GlowOrbSvg from "./GlowOrbSvg";
 import AnimatedWaves from "../../animatedwaves/AnimatedWaves";
 
-const HeroSection = () => {
+const HeroSection = () => { 
   return (
     <section
       id="home"
@@ -32,12 +32,12 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row sm:justify-center md:justify-start items-center gap-4">
-            <a
-              href="#contact"
+            <Link
+              to={"/contact"}
               className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-500 hover:to-cyan-400 transition w-full sm:w-auto text-center"
             >
               Let’s Talk
-            </a>
+            </Link>
 
 
             <Link

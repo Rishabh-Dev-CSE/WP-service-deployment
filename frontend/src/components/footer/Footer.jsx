@@ -59,7 +59,7 @@ const Footer = () => {
       >
         <div className="space-y-2 text-center">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-400">
-            Subscribe to my newsletter
+            <span className="text-white"> Subscribe to updates </span> and announcements 
           </h3>
           <p className="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
             Get updates on my latest projects, articles, and tips on frontend and backend development.

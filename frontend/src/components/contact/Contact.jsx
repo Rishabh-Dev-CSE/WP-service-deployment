@@ -13,7 +13,7 @@ const fadeInUp = {
 
 const Contact = () => {
     return (
-        <section className="relative bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-28 px-6 flex items-center justify-center min-h-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#952ca3] text-white py-28 px-6 flex items-center justify-center min-h-20 overflow-hidden">
             {/* Decorative background blobs */}
             <motion.div
                 animate={{ y: [0, 30, 0] }}

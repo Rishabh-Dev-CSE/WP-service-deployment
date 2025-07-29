@@ -92,7 +92,7 @@ const Navbar = () => {
           className="flex items-center gap-2 text-2xl font-extrabold tracking-tight"
         >
           <img src="/src/assets/logo/my-logo.png" alt="Logo" className="w-9 h-9" />
-          <span className="rgb-animate-text">SKC.Dev</span>
+          <span className="rgb-animate-text">WP Service</span>
         </motion.div>
 
         {/* Desktop Nav */}

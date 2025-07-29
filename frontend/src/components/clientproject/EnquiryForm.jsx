@@ -94,7 +94,7 @@ const EnquiryForm = () => {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-28 px-6 flex items-center justify-center min-h-screen overflow-hidden">
+    <section className="relative bg-gradient-to-br from-[#952ca3] via-[#302b63] to-[#24243e] text-white py-28 px-6 flex items-center justify-center min-h-screen overflow-hidden">
       {/* Animated Blobs */}
       <div className="absolute top-10 -left-20 w-72 h-72 bg-cyan-500 opacity-20 rounded-full filter blur-3xl animate-pulse" />
       <div className="absolute bottom-10 -right-20 w-72 h-72 bg-purple-500 opacity-20 rounded-full filter blur-3xl animate-pulse delay-200" />
@@ -118,10 +118,12 @@ const EnquiryForm = () => {
           >
             <FaPaperPlane />
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold  mb-6 leading-tight"
+            style={{fontSize:70}}
+          >
             Let’s Build <span className="text-cyan-400">Something Real</span>
           </h2>
-          <p className="text-gray-300 text-lg mb-6">
+          <p className="text-gray-300 font-600 text-lg mb-6">
             Whether you're a startup or scaling brand — let's craft digital
             experiences that convert and inspire.
           </p>

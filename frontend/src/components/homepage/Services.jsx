@@ -1,14 +1,14 @@
-// src/components/ServicesSection.jsx
 import React from "react";
 import { motion } from "framer-motion";
-import { FaPencilRuler, FaMobileAlt, FaCode, FaProjectDiagram } from "react-icons/fa";
+import {
+  FaShareAlt,
+  FaMobileAlt,
+  FaCode,
+  FaProjectDiagram,
+  FaSearch,
+} from "react-icons/fa";
 
 const services = [
-  {
-    icon: <FaPencilRuler size={32} />,
-    title: "UI/UX",
-    desc: "Creating intuitive and visually appealing designs that enhance user experience.",
-  },
   {
     icon: <FaCode size={32} />,
     title: "Web Design",
@@ -20,13 +20,22 @@ const services = [
     desc: "Crafting seamless and user-friendly mobile app interfaces.",
   },
   {
+    icon: <FaSearch size={32} />,
+    title: "SEO",
+    desc: "Optimizing websites to rank higher on search engines and increase visibility.",
+  },
+  {
+    icon: <FaShareAlt size={32} />,
+    title: "Social Media",
+    desc: "Boosting brand presence and engagement through strategic social media management.",
+  },
+  {
     icon: <FaProjectDiagram size={32} />,
     title: "Prototyping & Wireframing",
     desc: "Building interactive prototypes and structured wireframes for better design flow.",
   },
 ];
 
-// Enhanced smooth animation with spring effect
 const cardVariants = {
   hidden: {
     opacity: 0,
@@ -63,25 +72,36 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl font-extrabold text-center mb-6"
+          className="text-4xl sm:text-5xl font-extrabold text-center mb-4"
         >
-          Our <span className="text-cyan-400">Services</span>
+          We providing <span className="text-cyan-400">Services</span>
         </motion.h2>
+
+        {/* Friendly intro */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-center text-base sm:text-lg text-gray-300 max-w-3xl mx-auto mb-4"
+        >
+          Whether you're building from scratch or improving what you have — we’ve got you covered!
+        </motion.p>
 
         {/* Subheading */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto mb-12"
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="text-center text-sm sm:text-base text-gray-400 max-w-2xl mx-auto mb-12"
         >
-          Transforming ideas into intuitive digital experiences
+          We offer full-cycle digital services — from concept to launch. Need something custom? Just reach out — we're happy to collaborate.
         </motion.p>
 
         {/* Cards */}
         <div className="relative min-h-[300px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
             {services.map((service, i) => (
               <motion.div
                 key={i}
@@ -107,6 +127,6 @@ const ServicesSection = () => {
       </div>
     </section>
   );
-};  
+};
 
 export default ServicesSection;
