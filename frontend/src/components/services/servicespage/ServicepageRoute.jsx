@@ -1,14 +1,13 @@
 import React from "react";
+import ServicePage from "./ServicePage";
 import Navbar from "../../navbar/Navbar";
 import Footer from "../../footer/Footer";
-import SEOServicePage from "./seopage";
 
-
-export default function SeoRoute() {
+export default function ServicePageRoute() {
     return(
         <>
             <Navbar />
-            <SEOServicePage />
+            <ServicePage />
             <Footer />
         </>
     )
