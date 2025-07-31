@@ -59,9 +59,7 @@ const ServicePage = () => {
           >
             <span className="text-cyan-400">WP</span> Service
           </h1>
-          <p className="text-lg text-gray-400">
-            Professional WordPress services tailored for your business needs.
-          </p>
+          
            <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6"
             style={{ fontSize: "5vmin" }}
           >
