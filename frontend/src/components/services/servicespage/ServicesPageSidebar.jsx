@@ -32,7 +32,7 @@ export default function ServicesPageSidebar() {
     <>
       {/* Mobile Toggle Button */}
       <button
-        className="md:hidden fixed top-4 left-2 z-50 text-white bg-[#1e1f3b] p-2 rounded mt-13"
+        className="md:hidden fixed top-4 left-2 top-12 z-50 text-white bg-[#1e1f3b] p-2 rounded mt-13"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle Sidebar"
       >
@@ -41,7 +41,7 @@ export default function ServicesPageSidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-[#1e1f3b] p-6 pt-[10vmin] border-r border-gray-700 z-40 transition-transform duration-300 ease-in-out transform
+        className={`fixed top-0 left-0 min-h-screen w-64 bg-[#1e1f3b] p-6 pt-[10vmin] border-r border-gray-700 z-40 transition-transform duration-300 ease-in-out transform
           ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:block`}
       >
         <ul className="space-y-4 ms-10">
