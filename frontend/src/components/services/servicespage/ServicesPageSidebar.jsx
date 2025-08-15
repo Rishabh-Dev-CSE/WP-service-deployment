@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Optional icon set
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const services = [
   {
@@ -27,6 +27,7 @@ const services = [
 
 export default function ServicesPageSidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // Get current URL path
 
   return (
     <>
@@ -41,17 +42,25 @@ export default function ServicesPageSidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 min-h-screen w-64 bg-[#1e1f3b] p-6 pt-[10vmin] border-r border-gray-700 z-40 transition-transform duration-300 ease-in-out transform
+        className={`fixed top-0 left-0 min-h-screen w-64 bg-[#1e1f3b] p-0  pt-[10vmin] border-r border-gray-700 z-40 transition-transform duration-300 ease-in-out transform
           ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:block`}
       >
         <ul className="space-y-4 ms-10">
-        <h2 className="text-xl font-bold mt-10 text-cyan-400">Our Services</h2>
+          <h2
+            className="text-xl font-bold mt-10 bg-gradient-to-r from-red-400 via-blue-500 to-pink-500 bg-clip-text text-transparent animate-fade-in-slide"
+          >
+            Our Services
+          </h2>
+
           {services.map((service, index) => (
             <li key={index}>
               <Link
                 to={service.path}
-                className="hover:text-cyan-300 text-white transition-colors duration-200 block"
-                onClick={() => setIsOpen(false)} // Close on link click (mobile)
+                className={`block transition-colors duration-200 ${location.pathname === service.path
+                    ? "text-cyan-400 font-semibold"
+                    : "text-white hover:text-cyan-300"
+                  }`}
+                onClick={() => setIsOpen(false)}
               >
                 {service.name}
               </Link>
@@ -60,7 +69,7 @@ export default function ServicesPageSidebar() {
         </ul>
       </aside>
 
-      {/* Overlay (optional for mobile UX) */}
+      {/* Overlay for mobile */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"

@@ -1,47 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { auth, signInWithGoogle, logout } from "../../firebase/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 // Navigation Links
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Projects", path: "/projects" },
   { name: "Services", path: "/services" },
-  { name: "Experience", path: "/experience" },
+  { name: "Our Works", path: "/our-works" },
   { name: "About", path: "/about-us" },
   { name: "Contact", path: "/contact" },
 ];
 
 // Framer Motion Variants
-const genieMenuVariants = { 
-  initial: {
-    clipPath: "inset(0% 0% 0% 0%)",
-    opacity: 1,
-  },
+
+const genieMenuVariants = {
+  initial: { clipPath: "inset(0% 0% 0% 0%)", opacity: 1 },
   animate: {
     clipPath: "inset(0% 0% 0% 0%)",
     opacity: 1,
-    transition: {
-      duration: 0.4,
-      ease: [0.4, 0, 0.2, 1],
-    },
+    transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
   },
   exit: {
     clipPath: "inset(50% 50% 50% 50%)",
     opacity: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0.65, 0, 0.35, 1],
-    },
+    transition: { duration: 0.6, ease: [0.65, 0, 0.35, 1] },
   },
 };
 
 const navContainerVariants = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+  animate: { transition: { staggerChildren: 0.1 } },
 };
 
 const navItemVariants = {
@@ -50,11 +40,7 @@ const navItemVariants = {
 };
 
 const mobileNavContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
+  animate: { transition: { staggerChildren: 0.08 } },
 };
 
 const mobileNavItem = {
@@ -64,12 +50,40 @@ const mobileNavItem = {
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [user, setUser] = useState(null);
 
+  // Firebase auth state listener
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // Handle login
+  const handleLogin = async () => {
+    try {
+      await signInWithGoogle();
+      setIsMobileOpen(false); // close menu after login
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Handle logout
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setIsMobileOpen(false); // close menu after logout
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // Close mobile menu on scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (isMobileOpen) {
-        setIsMobileOpen(false);
-      }
+      if (isMobileOpen) setIsMobileOpen(false);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -81,7 +95,7 @@ const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
       className="fixed top-0 w-full z-50 backdrop-blur-md bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white shadow-md"
-      style={{zIndex:1000}}
+      style={{ zIndex: 1000 }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
@@ -92,7 +106,7 @@ const Navbar = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-2 text-2xl font-extrabold tracking-tight"
         >
-          <img src="/src/assets/logo/my-logo.png" alt="Logo" className="w-9 h-9" />
+          <img src="/logo/logo.png" alt="Logo" className="w-9 h-9" />
           <span className="rgb-animate-text">WP Service</span>
         </motion.div>
 
@@ -118,21 +132,32 @@ const Navbar = () => {
           ))}
         </motion.nav>
 
-        {/* CTA Button */}
+        {/* Desktop Login/Logout Button */}
+
         <motion.div
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="hidden md:block"
         >
-          <Link
-            to="#"
-            className="relative px-5 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md"
-          >
-           Signup / Login
-          </Link>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="relative px-5 py-2 rounded-full font-semibold text-white bg-red-500 hover:bg-red-600 transition-all duration-300 shadow-md"
+            >
+              Logout ({user.displayName})
+            </button>
+          ) : (
+            <button
+              onClick={handleLogin}
+              className="relative px-5 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md"
+            >
+              Signup / Login
+            </button>
+          )}
         </motion.div>
 
         {/* Hamburger */}
+        
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -140,24 +165,26 @@ const Navbar = () => {
           >
             <span
               className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${
-                isMobileOpen ? 'rotate-45 top-2.5' : 'top-1'
+                isMobileOpen ? "rotate-45 top-2.5" : "top-1"
               }`}
             ></span>
             <span
               className={`block absolute h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
-                isMobileOpen ? 'opacity-0' : 'top-3'
+                isMobileOpen ? "opacity-0" : "top-3"
               }`}
             ></span>
             <span
               className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${
-                isMobileOpen ? '-rotate-45 top-2.5' : 'top-5'
+                isMobileOpen ? "-rotate-45 top-2.5" : "top-5"
               }`}
             ></span>
           </button>
         </div>
+
       </div>
 
       {/* Mobile Menu */}
+
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
@@ -185,19 +212,32 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Mobile Login/Logout */}
+
               <motion.div variants={mobileNavItem}>
-                <Link
-                  to="/contact"
-                  onClick={() => setIsMobileOpen(false)}
-                  className="mt-2 inline-block text-center px-4 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md"
-                >
-                  Signup / Login
-                </Link>
+                {user ? (
+                  <button
+                    onClick={handleLogout}
+                    className="relative px-5 py-2 rounded-full font-semibold text-white bg-red-500 hover:bg-red-600 transition-all duration-300 shadow-md"
+                  >
+                    Logout ({user.displayName})
+                  </button>
+                ) : (
+                  <button
+                    onClick={handleLogin}
+                    className="relative px-5 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-blue-500 hover:to-cyan-400 transition-all duration-300 shadow-md"
+                  >
+                    Signup / Login
+                  </button>
+                )}
               </motion.div>
+
             </motion.nav>
           </motion.div>
         )}
       </AnimatePresence>
+
     </motion.header>
   );
 };

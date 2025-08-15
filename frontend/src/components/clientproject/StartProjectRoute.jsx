@@ -5,6 +5,7 @@ import EcommerceShowcase from "./ecommerce";
 import SaaSShowcase from "./SaaSShowcase";
 import EnquiryForm from "./EnquiryForm";
 import Footer from "../footer/Footer";
+import RestaurantDesign from "./Restaurant";
 
 
 
@@ -14,6 +15,7 @@ const StartProjectRoute = () => {
             <Navbar />
             <StartProjectHero />
             <EcommerceShowcase />
+            <RestaurantDesign />
             <SaaSShowcase />
             <EnquiryForm />
             <Footer />

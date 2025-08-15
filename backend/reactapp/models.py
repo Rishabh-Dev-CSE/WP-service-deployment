@@ -15,3 +15,16 @@ class SubscriberUser(models.Model):
 
     def __str__(self):
         return self.email
+
+class ServicesModel(models.Model):
+  CATEGORY_DICT = {
+    "ORGANIC": "Organic",
+    "RESTAURANT": "Restaurant",
+    "EDUCATION": "Education",
+    "BUSINESS": "Business",
+    "SOCIAL_MEDIA": "Social Media",
+    "OTHER_SERVICES": "Other Services",
+    }
+  Web_Services = models.CharField(max_length=50, choices=CATEGORY_DICT, default='OTHER_SERVICES')
+  Thumbnail =  models.ImageField(upload_to="services_thumbnailes")
+  discription = models.CharField()

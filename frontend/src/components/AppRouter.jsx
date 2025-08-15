@@ -8,6 +8,8 @@ import ContactRoute from "./contact/ContactRoute";
 import SeoRoute from "./services/seoservice/SeoRoute";
 import ServicePageRoute from "./services/servicespage/ServicepageRoute";
 import WebsiteRoute from "./services/wesite-service/WebsiteRoute";
+import NatureTemplate from "./services/wesite-service/theames/nature/nature";
+import EcommerceTemplate from "./services/wesite-service/theames/ecommerce/E-commerce";
 
 const AppRouter = () => {
     return (
@@ -24,6 +26,13 @@ const AppRouter = () => {
                 
                 <Route path="/services/website-development-theame" element={<WebsiteRoute />} />
                 <Route path="/services/seo-service" element={<SeoRoute />} />
+
+
+                {/* Theame routes  */}
+                <Route path="/themes/nature-theme-demo" element={<NatureTemplate />} />
+
+                <Route path="/themes/E-commerce-theme-demo" element={<EcommerceTemplate /> } />
+
 
 
             </Routes>

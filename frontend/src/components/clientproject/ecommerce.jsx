@@ -77,10 +77,21 @@ export default function EcommerceShowcase() {
           className="w-full h-[300px] md:h-[400px] bg-[#1c1c36] rounded-xl shadow-lg flex items-center justify-center"
         >
           <div className="text-cyan-400 text-xl font-semibold">
-            Storefront Mockup / Animation Here
+            <video
+              src="/othervideo/ecomvideo.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-100% object-cover rounded-xl"
+            >
+              Your browser does not support the video tag.
+            </video>
+
           </div>
         </motion.div>
       </div>
     </section>
   );
 }
+  

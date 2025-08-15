@@ -8,6 +8,7 @@ import AISnippetOptimization from "./AISnippetOptimization";
 import EEATAuthority from "./EEATAuthority";
 import CompetitiveAnalysis from "./CompetitiveAnalysis";
 import LinkBuilding from "./LinkBuilding";
+import ServicesTheamePageNavbar from "../services-nav/ServicesNavRoute";
 
 export default function SeoRoute() {
   return (
@@ -23,7 +24,9 @@ export default function SeoRoute() {
           className="flex-1 overflow-y-scroll"
           style={{ height: "100vh" }}
         >
+
           <div className="p-10 space-y-20">
+        <ServicesTheamePageNavbar />
             <KeywordStrategy />
             <TechnicalSEO />
             <AISnippetOptimization />
