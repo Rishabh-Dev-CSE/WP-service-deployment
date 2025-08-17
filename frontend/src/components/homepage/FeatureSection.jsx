@@ -71,7 +71,7 @@ const FeatureSection = () => {
           >
             <div className="w-full h-full rounded-[1.7rem] overflow-hidden">
               <video
-                src="/src/assets/feature/center-phone-video.mp4"
+                src="othervideo/center-phone-video.mp4"
                 autoPlay
                 loop
                 muted

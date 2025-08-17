@@ -5,11 +5,11 @@ import { Menu, X } from "lucide-react";
 const services = [
   {
     name: "Web Design",
-    path: "/services/website-development-theame"
+    path: "/services/website-development-theme"
   },
   {
     name: "App Design",
-    path: "/services/app-design"
+    path: "/services/app-service/app-theme"
   },
   {
     name: "SEO",

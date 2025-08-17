@@ -14,7 +14,7 @@ const services = [
     icon: <FaCode size={32} />,
     title: "Web Design",
     desc: "Designing responsive and engaging websites tailored to user needs.",
-    route_link: '/services/website-development-theame'
+    route_link: "/services/website-development-theame",
   },
   {
     icon: <FaMobileAlt size={32} />,
@@ -25,7 +25,7 @@ const services = [
     icon: <FaSearch size={32} />,
     title: "SEO",
     desc: "Optimizing websites to rank higher on search engines and increase visibility.",
-    route_link:"/services/seo-service"
+    route_link: "/services/seo-service",
   },
   {
     icon: <FaShareAlt size={32} />,
@@ -34,8 +34,8 @@ const services = [
   },
   {
     icon: <FaProjectDiagram size={32} />,
-    title: "Prototyping & Wireframing",
-    desc: "Building interactive prototypes and structured wireframes for better design flow.",
+    title: "Software Service",
+    desc: "Providing scalable, robust, and customized software solutions for businesses.",
   },
 ];
 
@@ -60,6 +60,18 @@ const cardVariants = {
       damping: 12,
     },
   }),
+};
+
+// Icon hover animation
+const iconHoverVariants = {
+  hover: {
+    scale: 1.3,
+    rotate: [0, 8, -8, 0],
+    transition: {
+      duration: 0.6,
+      ease: "easeInOut",
+    },
+  },
 };
 
 const ServicesSection = () => {
@@ -113,23 +125,26 @@ const ServicesSection = () => {
                 whileInView="show"
                 viewport={{ once: true }}
                 variants={cardVariants}
-
                 style={{ position: "relative", zIndex: 10 - i }}
               >
-                <Link
-                  to={service.route_link}
-                >
-                  <div
+                <Link to={service.route_link || "#"}>
+                  <motion.div
+                    whileHover="hover"
                     className="p-6 rounded-3xl bg-[#1e1b3a] hover:bg-[#2c274d] shadow-xl transition-all duration-300 border border-gray-700 hover:border-cyan-400 cursor-pointer relative overflow-hidden transform hover:scale-[1.07]"
                   >
-                    <div className="text-cyan-400 mb-4">{service.icon}</div>
+                    <motion.div
+                      className="text-cyan-400 mb-4 inline-block"
+                      variants={iconHoverVariants}
+                    >
+                      {service.icon}
+                    </motion.div>
                     <h3 className="text-xl font-semibold mb-2 text-white">
                       {service.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
                       {service.desc}
                     </p>
-                  </div>
+                  </motion.div>
                 </Link>
               </motion.div>
             ))}

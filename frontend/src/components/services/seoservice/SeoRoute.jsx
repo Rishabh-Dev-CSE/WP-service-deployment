@@ -8,7 +8,6 @@ import AISnippetOptimization from "./AISnippetOptimization";
 import EEATAuthority from "./EEATAuthority";
 import CompetitiveAnalysis from "./CompetitiveAnalysis";
 import LinkBuilding from "./LinkBuilding";
-import ServicesTheamePageNavbar from "../services-nav/ServicesNavRoute";
 
 export default function SeoRoute() {
   return (
@@ -25,8 +24,8 @@ export default function SeoRoute() {
           style={{ height: "100vh" }}
         >
 
-          <div className="p-10 space-y-20">
-        <ServicesTheamePageNavbar />
+          <div className="p-20 space-y-20">
+        {/* <ServicesTheamePageNavbar /> */}
             <KeywordStrategy />
             <TechnicalSEO />
             <AISnippetOptimization />
@@ -36,7 +35,6 @@ export default function SeoRoute() {
           </div>
         </main>
       </div>
-
       <Footer />
     </>
   );

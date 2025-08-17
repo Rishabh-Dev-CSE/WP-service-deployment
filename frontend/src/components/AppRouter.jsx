@@ -10,6 +10,7 @@ import ServicePageRoute from "./services/servicespage/ServicepageRoute";
 import WebsiteRoute from "./services/wesite-service/WebsiteRoute";
 import NatureTemplate from "./services/wesite-service/theames/nature/nature";
 import EcommerceTemplate from "./services/wesite-service/theames/ecommerce/E-commerce";
+import AppServiceRoute from "./services/app-services/AppServiceRoute";
 
 const AppRouter = () => {
     return (
@@ -24,11 +25,12 @@ const AppRouter = () => {
 
                 <Route path="/services" element={<ServicePageRoute />} />
                 
-                <Route path="/services/website-development-theame" element={<WebsiteRoute />} />
+                <Route path="/services/website-development-theme" element={<WebsiteRoute />} />
                 <Route path="/services/seo-service" element={<SeoRoute />} />
+                <Route path="/services/app-service/app-theme" element={<AppServiceRoute />} />
 
 
-                {/* Theame routes  */}
+                {/* Theme routes  */}
                 <Route path="/themes/nature-theme-demo" element={<NatureTemplate />} />
 
                 <Route path="/themes/E-commerce-theme-demo" element={<EcommerceTemplate /> } />

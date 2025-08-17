@@ -12,7 +12,7 @@ const RestaurantDesign = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <video
+        {/* <video
           // src="/othervideo/ecomvideo.mp4"
           width={500}
           height={400}
@@ -21,6 +21,14 @@ const RestaurantDesign = () => {
           loop
           muted
           playsInline
+        /> */}
+
+        <img
+        className="rounded-[10px] shadow"
+        src="/otherimages/restaurant.png" 
+        alt="restaurant image HD 4k graphics" 
+        width={500}
+
         />
       </motion.div>
 
@@ -31,7 +39,9 @@ const RestaurantDesign = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4"
+        style={{fontSize:"5vmin"}}
+        >
           Restaurant Website <span className="text-[#00C3FF]">That Attracts</span>
         </h2>
         <p className="text-gray-300 mb-8">

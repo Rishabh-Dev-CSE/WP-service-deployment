@@ -23,8 +23,14 @@ class ServicesModel(models.Model):
     "EDUCATION": "Education",
     "BUSINESS": "Business",
     "SOCIAL_MEDIA": "Social Media",
+    'ECOMMERCE': "E-commerce",
     "OTHER_SERVICES": "Other Services",
     }
   Web_Services = models.CharField(max_length=50, choices=CATEGORY_DICT, default='OTHER_SERVICES')
   Thumbnail =  models.ImageField(upload_to="services_thumbnailes")
   discription = models.CharField()
+  title = models.CharField(max_length=100)
+
+  def __str__(self):
+      return self.Web_Services
+

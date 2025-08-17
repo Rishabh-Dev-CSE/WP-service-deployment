@@ -41,7 +41,7 @@ const services = [
   // }),
 ];
 
-export default function WebsiteTheameCards() {
+export default function WebsiteThemeCards() {
   return (
     <div className="flex min-h-screen mt-10 bg-gradient-to-br from-[#0f1123] to-[#1e2150] text-white">
       <ServicesPageSidebar />
@@ -64,8 +64,7 @@ export default function WebsiteTheameCards() {
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full h-40 object-cover rounded-lg mb-4 transform transition-transform duration-300 hover:scale-[2] mx-auto"
-
+                className="w-full h-40 object-cover rounded-lg mb-4 transform transition-transform duration-300 hover:scale-[2] hover:align-center mx-auto"
                 style={{alignSelf:'center'}}
 
               />
