@@ -1,64 +1,66 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // Optional icons
+import React, { useEffect } from "react";
 
 const services = [
-  { name: "e-commerce", path: "/services/website-development-theame" },
-  { name: "Organic", path: "/services/app-design" },
-  { name: "Marketing", path: "/services/seo-service" },
-  { name: "Corporate", path: "/services/social-media" },
-  { name: "Digital Marketing", path: "/services/digital-marketing" },
+  { name: "E-Commerce", id: "e-commerce" },
+  { name: "Education", id: "education" },
+  { name: "Travel", id: "travel" },
+  { name: "Real Estate", id: "real-estate" },
+  { name: "Creative", id: "creative" },
+  { name: "Blogs & Writing", id: "blogs-&-writing" },
+  { name: "Events", id: "events" },
+  { name: "Healthcare", id: "healthcare" },
+  { name: "Food", id: "food" },
+  { name: "Business", id: "business" },
+  { name: "Technology", id: "technology" },
+  { name: "Nonprofit", id: "nonprofit" },
 ];
 
-export default function ServicesTheamePageNavbar() {
-  const [isOpen, setIsOpen] = useState(false);
+export default function InnerServicesNavbar({ activeService, setActiveService }) {
+  const handleClick = (id) => {
+    setActiveService(id);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // 👇 Scroll detection using IntersectionObserver
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveService(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 } // section ka 50% visible hote hi active hoga
+    );
+
+    services.forEach((service) => {
+      const section = document.getElementById(service.id);
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [setActiveService]);
 
   return (
-    <>
-      {/* Toggle Button (Mobile only) */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded bg-[#1e1f3b] text-white shadow-lg"
-        aria-label="Toggle sidebar"
-      >
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-
-      {/* Sidebar */}
-      <nav
-        className={`fixed top-0 left-0 h-0 w-full   bg-[#1e1f3b] p-10 pt-[5vh] border-r border-gray-700 z-40 transform transition-transform duration-300 ease-in-out
-          ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-          md:translate-x-0 md:static md:block`}
-          style={{
-            position:'sticky',
-          }}
-          
-      >
-        <div className="ms-0 ">
-          {/* <h2 className="text-xl font-bold mb-6 text-cyan-400">Our Services</h2> */}
-          <ul className="space-y-4 flex gap-10 bg-gradient-to-r from-red-400 via-blue-500 to-pink-500 bg-clip-text ">
-             {services.map((service, index) => (
-              <li key={index}>
-                <Link
-                  to={service.path}
-                  onClick={() => setIsOpen(false)}
-                  className="hover:text-cyan-300 transition-colors duration-200 block"
-                >
-                  {service.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className="w-full bg-[#1e1f3b] shadow-md sticky top-[50px] z-50">
+      <nav className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+        <ul className="flex gap-5 lg:ms-110 md:gap-10 px-6 py-4 md:justify-center text-lg font-semibold whitespace-nowrap">
+          {services.map((service) => (
+            <li key={service.id} className="flex-shrink-0">
+              <button
+                onClick={() => handleClick(service.id)}
+                aria-current={activeService === service.id ? "page" : undefined}
+                className={`relative block bg-gradient-to-r from-red-400 via-blue-500 to-pink-500 bg-clip-text text-transparent transition-all duration-300 hover:scale-105 hover:text-cyan-300
+                  ${activeService === service.id ? "underline underline-offset-4 decoration-cyan-400" : ""}`}
+              >
+                {service.name}
+              </button>
+            </li>
+          ))}
+        </ul>
       </nav>
-
-      {/* Overlay (for mobile) */}
-      {isOpen && (
-        <div
-          onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black bg-opacity-40 z-30 md:hidden"
-        />
-      )}
-    </>
+    </div>
   );
 }

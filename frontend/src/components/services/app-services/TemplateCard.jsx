@@ -12,7 +12,7 @@ export default function TemplateCard({ template }) {
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         whileHover={{ scale: 1.02 }}
-        className="bg-slate-900/40 backdrop-blur-xl border border-slate-700/60 rounded-2xl overflow-hidden group shadow-md flex flex-col transition-all duration-500 w-full"
+        className="bg-slate-900/40 backdrop-blur-xl border border-slate-700/60 rounded-2xl overflow-hidden group shadow-md flex flex-col transition-all duration-500 w-full relative"
       >
         {/* Image Section */}
         <div className="relative overflow-hidden">
@@ -27,9 +27,10 @@ export default function TemplateCard({ template }) {
             }}
           />
 
-          {/* Floating Badge */}
-          <div className="absolute top-2 right-2 bg-slate-900/70 backdrop-blur-md text-cyan-400 text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-md shadow-cyan-500/20">
-            APP
+          {/* Ribbon Badge */}
+          <div 
+          style={{textAlign:'end'}} className="absolute top-3 right-[-45px] rotate-30 bg-gradient-to-r from-red-500 to-pink-500 text-white text-[10px] sm:text-xs font-bold px-12 py-1 shadow-lg shadow-cyan-500/30">
+            Demo Template
           </div>
 
           {/* Overlay Hover Effect */}
@@ -99,7 +100,7 @@ export default function TemplateCard({ template }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-           className="fixed inset-0 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-50 px-4"
+            className="fixed inset-0 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-50 px-4"
             onClick={() => setIsPreviewOpen(null)}
           >
             <motion.div
@@ -108,14 +109,25 @@ export default function TemplateCard({ template }) {
               exit={{ scale: 0.8 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
               className="relative max-w-3xl w-full mt-20"
-              onClick={(e) => e.stopPropagation()} 
-             style={{ overflowY: "scroll", height:'80%' }}
+              onClick={(e) => e.stopPropagation()}
+              style={{ overflowY: "scroll", height: "80%" }}
             >
+              {/* Thumbnail always visible */}
               <img
                 src={template.appthumbnail}
                 alt={`${template.name} large preview`}
                 className="w-full h-auto rounded-xl shadow-2xl"
               />
+
+              {/* Extra image only if available */}
+              {template.image && (
+                <img
+                  src={template.image}
+                  alt={`${template.name} large preview`}
+                  className="w-full h-auto shadow-2xl m-1"
+                />
+              )}
+
               {/* Close Button */}
               <button
                 onClick={() => setIsPreviewOpen(false)}

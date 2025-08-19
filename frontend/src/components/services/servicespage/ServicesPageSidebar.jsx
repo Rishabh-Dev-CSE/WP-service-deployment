@@ -42,10 +42,10 @@ export default function ServicesPageSidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 min-h-screen w-64 bg-[#1e1f3b] p-0  pt-[10vmin] border-r border-gray-700 z-40 transition-transform duration-300 ease-in-out transform
+        className={`fixed top-0 left-0 min-h-screen w-50 bg-[#1e1f3b] p-0  pt-[10vmin] border-r border-gray-700 z-40 transition-transform duration-300 ease-in-out transform
           ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0 md:static md:block`}
       >
-        <ul className="space-y-4 ms-10">
+        <ul className="space-y-4 ms-10 lg:mt-[-20px] mt-25">
           <h2
             className="text-xl font-bold mt-10 bg-gradient-to-r from-red-400 via-blue-500 to-pink-500 bg-clip-text text-transparent animate-fade-in-slide"
           >
