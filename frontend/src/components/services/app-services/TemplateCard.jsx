@@ -99,16 +99,17 @@ export default function TemplateCard({ template }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
-            onClick={() => setIsPreviewOpen(false)}
+           className="fixed inset-0 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-50 px-4"
+            onClick={() => setIsPreviewOpen(null)}
           >
             <motion.div
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="relative max-w-3xl w-full"
-              onClick={(e) => e.stopPropagation()} // Prevent close on image click
+              className="relative max-w-3xl w-full mt-20"
+              onClick={(e) => e.stopPropagation()} 
+             style={{ overflowY: "scroll", height:'80%' }}
             >
               <img
                 src={template.appthumbnail}
