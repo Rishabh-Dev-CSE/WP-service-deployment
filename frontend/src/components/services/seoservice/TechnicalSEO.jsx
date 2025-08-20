@@ -42,8 +42,8 @@ export default function TechnicalSEO() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="w-full max-w-6xl mx-auto bg-gradient-to-br from-[#15172e] to-[#1e224c] rounded-xl shadow-xl
-                 px-4 sm:px-6 md:px-10 lg:px-20 py-12 sm:py-16 lg:py-20 text-white mb-20"
+      className="w-full max-w-6xl mx-auto bg-gradient-to-br from-[#15172e] to-[#1e224c] shadow-xl
+                 px-4 sm:px-6 md:px-10 lg:px-20 sm:py-16 lg:py-20 text-white "
     >
       {/* Heading */}
       <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-cyan-400 text-center mb-10">

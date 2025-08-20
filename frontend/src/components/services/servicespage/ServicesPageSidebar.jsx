@@ -17,7 +17,7 @@ const services = [
   },
   {
     name: "Social Media",
-    path: "/services/social-media"
+    path: "/services/social-media-service"
   },
   {
     name: "Digital Marketing",

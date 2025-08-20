@@ -20,7 +20,7 @@ export default function AppServiceRoute() {
   const [activeService, setActiveService] = useState("e-commerce");
   
 
-  // 🟢 Active category render karne ka function
+  // Active category render karne ka function
   const renderActiveCategory = () => {
     switch (activeService) {
       case "e-commerce":

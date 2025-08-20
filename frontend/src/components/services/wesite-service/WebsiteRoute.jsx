@@ -8,11 +8,18 @@ import FoodWebsites from "./Foodweb";
 import EventsWebsites from "./EventsWeb";
 import CreativeWebsites from "./CreativeWeb";
 import TravelWebsites from "./TravelWeb";
+import RealEstateWebsites from "./RealEstateWeb";
+import BlogsWebsites from "./BlogsWeb";
+import HealthcareWebsites from "./HealthcareWeb";
+import EducationWebsites from "./EducationWeb";
+import TechnologyWebsite from "./TechnologyWeb";
+import NonprofitWebsite from "./NonprofitWebsite";
+import BusinessWebsites from "./BusinessWeb";
 
 export default function WebsiteRoute() {
   const [activeService, setActiveService] = useState("e-commerce");
 
-  // 🟢 Active category render karne ka function
+  // Active category render
   const renderActiveCategory = () => {
     switch (activeService) {
       case "e-commerce":
@@ -25,6 +32,20 @@ export default function WebsiteRoute() {
         return <TravelWebsites activeService={activeService} />;
       case "creative":
         return <CreativeWebsites activeService={activeService} />;
+      case "real-estate":
+        return <RealEstateWebsites activeService={activeService} />;
+      case "blogs-&-writing":
+        return <BlogsWebsites activeService={activeService} />;
+      case "healthcare":
+        return <HealthcareWebsites activeService={activeService} />;
+      case "education":
+        return <EducationWebsites activeService={activeService} />;
+      case "technology":
+        return <TechnologyWebsite activeService={activeService} />;
+      case "nonprofit":
+        return <NonprofitWebsite activeService={activeService} />;
+        case "business":
+          return <BusinessWebsites activeService={activeService} />
       default:
         return <EcommerceWeb activeService={activeService} />;
     }

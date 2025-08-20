@@ -58,7 +58,7 @@ const LinkBuilding = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-4xl font-extrabold text-cyan-400 mb-6 text-center tracking-tight">
-          6. Strategic Link Building & Content Placement
+         <span className="text-white"> 6. Strategic Link Building </span> & Content Placement
         </h2>
         <p className="text-lg text-slate-300 max-w-3xl mx-auto text-center mb-14">
           We go beyond generic backlink tactics—focusing on high-authority placements, niche-specific value, and engagement that drives both visibility and trust.

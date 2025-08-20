@@ -18,10 +18,10 @@ const AISnippetOptimization = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="text-center mb-20 px-4 sm:px-6 md:px-10 lg:px-24 py-12 sm:py-16 lg:py-20 rounded-xl bg-gradient-to-br from-[#15172e] to-[#1e224c] shadow-xl text-white"
+      className="text-center px-4 sm:px-6 md:px-10 lg:px-24  sm:py-16 lg:py-20 rounded-xl bg-gradient-to-br from-[#15172e] to-[#1e224c] shadow-xl text-white"
     >
       <h4 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-cyan-400 mb-6 sm:mb-10">
-        3. AI Search & Featured Snippet Optimization
+        <span className="text-white">3. AI Search & Featured </span> Snippet Optimization
       </h4>
 
       <p className="max-w-4xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 mb-10 sm:mb-12 leading-relaxed">

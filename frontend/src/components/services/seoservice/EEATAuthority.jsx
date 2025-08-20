@@ -44,7 +44,7 @@ const EEATAuthority = () => {
       className="text-center mb-20 py-16 px-6 rounded-xl bg-gradient-to-br from-[#15172e] to-[#1e224c] shadow-xl text-white"
     >
       <h4 className="text-3xl font-extrabold text-cyan-400 mb-10">
-        4. E-E-A-T & Authority Building
+       <span className="text-white"> 4. E-E-A-T & </span>Authority Building
       </h4>
       <p className="max-w-3xl mx-auto text-lg text-slate-300 mb-12">
         For any business, especially in sensitive industries, demonstrating Experience, Expertise, Authoritativeness, and Trustworthiness (E-E-A-T) is crucial. We build and showcase these signals to enhance your online reputation and ranking.

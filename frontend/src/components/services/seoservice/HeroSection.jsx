@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import ServicesPageSidebar from "../servicespage/ServicesPageSidebar"; // Adjust path as needed
 
 export default function HeroSectionPage() {
   return (
@@ -14,7 +13,7 @@ export default function HeroSectionPage() {
         {/* Hero Section */}
         <motion.section
           id="hero"
-          className="w-full mb-16 py-20 px-10 rounded-xl bg-gradient-to-br from-[#0f1029] to-[#1c1d3f] shadow-xl"
+          className="w-full mb-16 py-20 px-10  bg-gradient-to-br from-[#0f1029] to-[#1c1d3f] shadow-xl"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

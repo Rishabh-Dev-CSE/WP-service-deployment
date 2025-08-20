@@ -20,11 +20,11 @@ export default function SeoRoute() {
 
         {/* Main Scrollable Section */}
         <main
-          className="flex-1 overflow-y-scroll"
+          className=" pt-10 flex-1 overflow-y-scroll"
           style={{ height: "100vh" }}
         >
 
-          <div className="p-20 space-y-20">
+          <div className="p-2 mt-5 space-y-20">
         {/* <ServicesTheamePageNavbar /> */}
             <KeywordStrategy />
             <TechnicalSEO />

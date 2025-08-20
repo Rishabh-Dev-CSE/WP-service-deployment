@@ -47,7 +47,7 @@ const CompetitiveAnalysis = () => {
 
       {/* Heading & description */}
       <h2 className="text-3xl sm:text-4xl font-extrabold text-cyan-400 text-center mb-6">
-        5. Competitive Landscape Analysis
+        5. Competitive <span className="text-white"> Landscape Analysis </span>
       </h2>
       <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto text-center mb-12 leading-relaxed">
         We don't just research competitors — we reverse-engineer them. Our insights help you unlock hidden opportunities to lead your industry.

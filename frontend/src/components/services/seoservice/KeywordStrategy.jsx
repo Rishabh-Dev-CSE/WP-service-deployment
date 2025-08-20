@@ -9,7 +9,7 @@ export default function KeywordStrategyPage() {
   };
 
   return (
-    <div className="flex flex-col pt-10 md:flex-row bg-gradient-to-br from-[#0f1123] to-[#1e2150] text-white">
+    <div className="flex flex-col pt-2 md:flex-row bg-gradient-to-br from-[#0f1123] to-[#1e2150] text-white">
 
 
   
@@ -17,13 +17,13 @@ export default function KeywordStrategyPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full rounded-xl bg-gradient-to-br from-[#15172e] to-[#1e224c] shadow-xl"
+          className="w-full bg-gradient-to-br from-[#15172e] to-[#1e224c] shadow-xl"
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-cyan-400 text-center mb-10 sm:mb-12">
-            Our Core SEO Services
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-cyan-400 text-center  mt-5 sm:mb-8">
+            Our Core <span className="text-white"> SEO Services </span>
           </h3>
 
-          <div className="p-4 sm:p-6 rounded-xl border border-cyan-800 bg-[#1a1d3a]">
+          <div className="p-4 sm:p-6  bg-[#1a1d3a]">
             <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-4">
               1. In-Depth Keyword Strategy
             </h4>
