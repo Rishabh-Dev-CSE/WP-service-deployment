@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Our Works", path: "/our-works" },
   { name: "About", path: "/about-us" },
   { name: "Contact", path: "/contact" },
+  {name: "Pricing", path:"/sercvice/pricing"}
 ];
 
 // Framer Motion Variants

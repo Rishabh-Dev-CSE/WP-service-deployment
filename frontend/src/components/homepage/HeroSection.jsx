@@ -11,6 +11,7 @@ const HeroSection = () => {
       id="home"
       className="h-200 flex items-center justify-center bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white relative pb-0"
     >
+      {/* <iframe height="430" width="350" src="https://bot.dialogflow.com/ac27723a-c6b6-4226-a170-3a05fd00fdc2"></iframe> */}
       {/* <AnimatedWaves /> */}
       <div className="max-w-7xl w-full px-0 mt-[10vmin] sm:px-2 md:px-4 flex flex-col md:flex-row items-center justify-between z-10 gap-1 md:gap-0"
       //  style={{top:100}}

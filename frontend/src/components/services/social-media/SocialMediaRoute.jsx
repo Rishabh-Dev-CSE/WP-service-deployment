@@ -6,6 +6,7 @@ import HeroSection from "./socialMediaIntro";
 import SocialMediaServices from "./SocialMediaServices";
 import SocialProof from "./SocialProof";
 import CaseStudies from "./CaseStudies";
+import FAQSocialMedia from "./FAQSocialMedia";
 
 export default function SocialMediaRoute() {
   return (
@@ -28,6 +29,7 @@ export default function SocialMediaRoute() {
             <SocialMediaServices />
             <SocialProof />
             <CaseStudies />
+            <FAQSocialMedia />
           </div>
         </main>
       </div>

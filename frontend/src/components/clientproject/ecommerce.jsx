@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaShoppingCart, FaMobileAlt, FaRocket, FaUserCheck } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const EcommerceDesign = ({
   imageSrc = "/otherimages/ecom.png",
@@ -95,7 +96,10 @@ const EcommerceDesign = ({
           className="mt-8 bg-gradient-to-r from-[#00C3FF] to-[#3A7BD5] px-6 py-3 rounded-full font-semibold shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00C3FF]/60"
           onClick={onCtaClick}
         >
-          Launch Your Store With Us
+          <Link to={"/services/website-development-theme"} >
+          
+                Launch Your Store With Us
+          </Link>
         </motion.button>
       </motion.div>
     </div>

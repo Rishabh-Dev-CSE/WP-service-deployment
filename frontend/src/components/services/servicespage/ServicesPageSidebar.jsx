@@ -21,7 +21,15 @@ const services = [
   },
   {
     name: "Digital Marketing",
-    path: "/services/digital-marketing"
+    path: "/coming-soon"
+  },
+  {
+    name : "Software Service",
+    path: '/coming-soon'
+  },
+  {
+    name:"Retaurants QR Menu",
+    path : "/coming-soon"
   }
 ];
 
