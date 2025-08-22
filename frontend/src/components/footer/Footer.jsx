@@ -21,7 +21,7 @@ const Footer = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/subscribe', {
+      const res = await fetch('https://wp-service-deployment-1.onrender.com/subscribe', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
