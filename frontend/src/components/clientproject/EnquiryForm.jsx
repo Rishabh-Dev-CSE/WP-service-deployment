@@ -75,7 +75,7 @@ const EnquiryForm = () => {
   const fields = [
     {
       name: "name",
-      placeholder: "e.g. Rishabh Shakya",
+      placeholder: "e.g. your anme ",
       type: "text",
       icon: <FaUser className="absolute left-3 top-3.5 text-cyan-400" />,
     },
