@@ -43,10 +43,10 @@ const ProjectIcon = ({ size = 36 }) => (
 );
 
 const ArrowRightIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="5" y1="12" x2="19" y2="12"></line>
-    <polyline points="12 5 19 12 12 19"></polyline>
-  </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
 );
 
 // --- Service Cards Data ---
@@ -115,168 +115,129 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="relative w-full py-20 lg:py-28 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white overflow-hidden">
-
+      
+      {/* ✅ SEO Helmet Section */}
       <Helmet>
-      {/* 🔑 Core Meta */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content="Velorax" />
-      <meta
-        name="robots"
-        content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-      />
-      <meta name="language" content="en" />
-      <meta name="distribution" content="global" />
-      <meta name="geo.region" content="US" /> {/* 🌍 Added regional targeting */}
-      <meta name="geo.placename" content="Worldwide" />
+  {/* 🔑 Core Meta */}
+  <title>Velorax | Premium Digital Services (Web, App, SEO, SaaS, Software)</title>
+  <meta name="description" content="Velorax delivers premium web design, mobile app development, SEO optimization, SaaS solutions, digital branding, and enterprise software to help businesses scale globally." />
+  <meta name="keywords" content="Velorax, Premium Digital Services, Web Design Agency, Mobile App Development, SEO Company, SaaS Development, Software Solutions, Social Media Marketing, AI SEO, Enterprise Solutions" />
+  <meta name="author" content="Velorax" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="language" content="en" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
 
-      {/* 🌍 Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
-      <meta property="og:locale" content={locale} />
-      <meta property="og:site_name" content="Velorax" />
+  {/* 🌍 Open Graph */}
+  <meta property="og:title" content="Velorax | Global Leader in Web, App, SEO & SaaS" />
+  <meta property="og:description" content="Explore Velorax’s award-winning digital services — web, app, SEO, SaaS, social media & enterprise software." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://velorax.com/services" />
+  <meta property="og:image" content="https://velorax.com/og-image.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Velorax" />
 
-      {/* 🐦 Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@VeloraxOfficial" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+  {/* 🐦 Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@VeloraxOfficial" />
+  <meta name="twitter:title" content="Velorax | Premium Digital Services" />
+  <meta name="twitter:description" content="Web, App, SEO & SaaS Services for modern enterprises." />
+  <meta name="twitter:image" content="https://velorax.com/twitter-card.jpg" />
 
-      {/* 🌐 Canonical + hreflang */}
-      <link rel="canonical" href={url.split("?")[0]} /> {/* ✅ Clean canonical */}
-      <link rel="alternate" href={`${url}`} hrefLang="en" />
-      <link rel="alternate" href={`${url}/in`} hrefLang="hi" />
-      <link rel="alternate" href={`${url}/fr`} hrefLang="fr" />
-      <link rel="alternate" href={`${url}/es`} hrefLang="es" />
-      <link rel="alternate" href={`${url}/de`} hrefLang="de" />
+  {/* 🌐 Canonical + hreflang */}
+  <link rel="canonical" href="https://velorax.com/services" />
+  <link rel="alternate" href="https://velorax.com/services" hrefLang="en" />
+  <link rel="alternate" href="https://velorax.com/in/services" hrefLang="hi" />
+  <link rel="alternate" href="https://velorax.com/fr/services" hrefLang="fr" />
+  <link rel="alternate" href="https://velorax.com/es/services" hrefLang="es" />
+  <link rel="alternate" href="https://velorax.com/de/services" hrefLang="de" />
 
-      {/* ✅ JSON-LD: Organization */}
-      <script type="application/ld+json">{`
+  {/* ✅ JSON-LD: Organization Schema */}
+  <script type="application/ld+json">{`
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Velorax",
+    "url": "https://velorax.com",
+    "logo": "https://velorax.com/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/velorax",
+      "https://twitter.com/VeloraxOfficial",
+      "https://www.linkedin.com/company/velorax",
+      "https://www.instagram.com/velorax"
+    ]
+  }
+  `}</script>
+
+  {/* ✅ JSON-LD: Website Schema */}
+  <script type="application/ld+json">{`
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://velorax.com",
+    "name": "Velorax Digital Agency",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://velorax.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  `}</script>
+
+  {/* ✅ JSON-LD: Service Schema (Multi-Service) */}
+  <script type="application/ld+json">{`
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": ["Web Design", "App Development", "SEO Optimization", "Software Development", "Social Media Marketing"],
+    "provider": {
+      "@type": "Organization",
+      "name": "Velorax",
+      "url": "https://velorax.com"
+    },
+    "areaServed": { "@type": "Place", "name": "Worldwide" }
+  }
+  `}</script>
+
+  {/* ✅ JSON-LD: Breadcrumbs */}
+  <script type="application/ld+json">{`
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velorax.com" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://velorax.com/services" }
+    ]
+  }
+  `}</script>
+
+  {/* ✅ JSON-LD: FAQ for SEO Rich Snippets */}
+  <script type="application/ld+json">{`
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
       {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Velorax",
-        "url": "https://velorax.com",
-        "logo": "https://velorax.com/logo.png",
-        "sameAs": [
-          "https://www.facebook.com/velorax",
-          "https://twitter.com/VeloraxOfficial",
-          "https://www.linkedin.com/company/velorax",
-          "https://www.instagram.com/velorax"
-        ]
-      }
-      `}</script>
-
-      {/* ✅ JSON-LD: Website */}
-      <script type="application/ld+json">{`
+        "@type": "Question",
+        "name": "What services does Velorax provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Velorax provides web design, app development, SEO optimization, SaaS solutions, and enterprise software services."
+        }
+      },
       {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://velorax.com",
-        "name": "Velorax Digital Agency",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://velorax.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
+        "@type": "Question",
+        "name": "Does Velorax offer SEO services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Velorax specializes in advanced SEO strategies including technical SEO, link building, and local SEO."
         }
       }
-      `}</script>
+    ]
+  }
+  `}</script>
 
-      {/* ✅ JSON-LD: Services */}
-      <script type="application/ld+json">{`
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": ["Web Design", "App Development", "SEO Optimization", "SaaS Development", "Software Solutions"],
-        "provider": {
-          "@type": "Organization",
-          "name": "Velorax",
-          "url": "https://velorax.com"
-        },
-        "areaServed": { "@type": "Place", "name": "Worldwide" }
-      }
-      `}</script>
-
-      {/* ✅ JSON-LD: Product (for SaaS offering) */}
-      <script type="application/ld+json">{`
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Velorax SaaS Platform",
-        "image": "https://velorax.com/saas-preview.jpg",
-        "description": "Enterprise SaaS platform for businesses to scale with SEO, analytics, and automation.",
-        "brand": {
-          "@type": "Organization",
-          "name": "Velorax"
-        },
-        "offers": {
-          "@type": "Offer",
-          "url": "https://velorax.com/pricing",
-          "priceCurrency": "USD",
-          "price": "199.00",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-      `}</script>
-
-      {/* ✅ JSON-LD: Reviews */}
-      <script type="application/ld+json">{`
-      {
-        "@context": "https://schema.org",
-        "@type": "AggregateRating",
-        "itemReviewed": {
-          "@type": "Organization",
-          "name": "Velorax"
-        },
-        "ratingValue": "4.9",
-        "reviewCount": "128"
-      }
-      `}</script>
-
-      {/* ✅ JSON-LD: Breadcrumb */}
-      <script type="application/ld+json">{`
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://velorax.com" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://velorax.com/services" },
-          { "@type": "ListItem", "position": 3, "name": "SEO", "item": "https://velorax.com/services/seo" }
-        ]
-      }
-      `}</script>
-
-      {/* ✅ JSON-LD: FAQ */}
-      <script type="application/ld+json">{`
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What services does Velorax provide?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Velorax provides web design, app development, SEO optimization, SaaS solutions, and enterprise software services."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Velorax offer SEO services?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Velorax specializes in advanced SEO strategies including technical SEO, link building, and local SEO."
-            }
-          }
-        ]
-      }
-      `}</script>
-    </Helmet>
+</Helmet>
 
       {/* Background spotlight */}
       <div
@@ -300,9 +261,9 @@ const ServicesSection = () => {
             <motion.div key={i} custom={i} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={cardVariants} className="w-full">
               <a href={service.route_link || "#"} className="block group h-full">
                 <div className="relative p-6 h-full rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-lg transition-all duration-300 ease-in-out hover:bg-white/10 hover:border-cyan-400/50 hover:shadow-cyan-400/10 hover:-translate-y-2 overflow-hidden flex flex-col">
-
+                  
                   <div className="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-700 ease-in-out group-hover:left-[100%]"></div>
-
+                  
                   <div className="relative z-10 flex flex-col h-full">
                     <motion.div className="text-cyan-400 mb-5 inline-block p-4 rounded-full bg-cyan-400/10 self-start" variants={iconHoverVariants} whileHover="hover">
                       {service.icon}
