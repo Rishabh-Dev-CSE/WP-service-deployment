@@ -12,6 +12,7 @@ import WebsiteRoute from "./services/wesite-service/WebsiteRoute";
 import AppServiceRoute from "./services/app-services/AppServiceRoute";
 import SocialMediaRoute from "./services/social-media/SocialMediaRoute";
 import ComingSoonPageRoute from "./comingsoon/ComingSoonRoute";
+import PricingRoute from "./pricing/PricingRoute";
 
 
 const AppRouter = () => {
@@ -30,7 +31,7 @@ const AppRouter = () => {
                 <Route path="/services/website-development-theme" element={<WebsiteRoute /> } />
                 <Route path="/services/app-service/app-theme" element={<AppServiceRoute />} />
                 <Route path="/services/social-media-service" element={<SocialMediaRoute />} />
-
+                <Route path="/service/pricing" element={<PricingRoute />} />
                 <Route path="/coming-soon" element={<ComingSoonPageRoute />} />
 
             </Routes>

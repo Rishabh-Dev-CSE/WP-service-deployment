@@ -12,7 +12,7 @@ const navLinks = [
   { name: "Our Works", path: "/our-works" },
   { name: "About", path: "/about-us" },
   { name: "Contact", path: "/contact" },
-  {name: "Pricing", path:"/sercvice/pricing"}
+  {name: "Pricing", path:"/service/pricing"}
 ];
 
 // Framer Motion Variants
@@ -107,8 +107,8 @@ const Navbar = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-2 text-2xl font-extrabold tracking-tight"
         >
-          <img src="/logo/logo.png" alt="Logo" className="w-9 h-9" />
-          <span className="rgb-animate-text">WP Service</span>
+          <img src="/logo/company-logo.png" alt="Logo" className="w-9 h-9" />
+          <span className="rgb-animate-text">veloraX</span>
         </motion.div>
 
         {/* Desktop Nav */}
