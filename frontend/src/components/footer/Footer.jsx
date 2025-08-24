@@ -22,7 +22,7 @@ const Footer = () => {
 
     try {
       const res = await fetch(
-        "http://127.0.0.1:8000/subscribe",
+        "https://wp-service-deployment-1.onrender.com/subscribe",
         {
           method: "POST",
           headers: {

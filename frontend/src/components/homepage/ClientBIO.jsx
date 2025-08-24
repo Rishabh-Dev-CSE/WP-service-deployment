@@ -13,7 +13,7 @@ const TopClientsCarousel = () => {
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/top-clients");
+        const res = await fetch("https://wp-service-deployment-1.onrender.com/top-clients");
         const data = await res.json();
 
         const fixedClients = (data.clients || []).map((client) => {
