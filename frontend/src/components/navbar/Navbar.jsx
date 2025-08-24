@@ -7,12 +7,10 @@ import { onAuthStateChanged } from "firebase/auth";
 // Navigation Links
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Projects", path: "/projects" },
   { name: "Services", path: "/services" },
-  { name: "Our Works", path: "/our-works" },
   { name: "About", path: "/about-us" },
   { name: "Contact", path: "/contact" },
-  {name: "Pricing", path:"/service/pricing"}
+  {name: "Pricing", path:"/service/pricing"},
 ];
 
 // Framer Motion Variants

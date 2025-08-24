@@ -18,8 +18,8 @@ const HomePageRoute = () => {
             <ServicesSection />
             <FeatureSection />
             <TopClientsCarousel />
-            <DailyOrderStatus />
             <DocumentationComponent />
+            <DailyOrderStatus />
             {/* <ParallaxSections /> */}
             {/* <LoginAndSend /> */}
             <Footer />

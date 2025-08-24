@@ -10,5 +10,6 @@ class SubscribeAdmin(admin.ModelAdmin):
 admin.site.register(Enquiry,EnquiryAdmin)
 admin.site.register(SubscriberUser,SubscribeAdmin)
 admin.site.register(ServicesModel)
+admin.site.register(TopClients)
 
 # Register your models here.
