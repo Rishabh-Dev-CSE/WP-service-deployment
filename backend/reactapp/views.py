@@ -44,6 +44,7 @@ def subscriberUser(request):
 @csrf_exempt
 @api_view(['GET'])
 def topclients(request):
+    
     if request.method == 'GET':
         clients = TopClients.objects.all()
         data = []
@@ -53,16 +54,16 @@ def topclients(request):
                 "client_name": client.client_name,
                 "company_name": client.company_name,
                 "discription": client.discription,
-                "address": client.address,
-                "contact_number": client.contact_number,
-                "citizen": client.citizen,
-                "business_type": client.business_type,
+                "website": client.client_website,
+                # "address": client.address,
+                # "contact_number": client.contact_number,
+                # "citizen": client.citizen,
+                # "business_type": client.business_type,
                 "image": request.build_absolute_uri(client.image.url)
             })
-
         return JsonResponse({"clients": data}, safe=False)
-
     return JsonResponse({"error": "Invalid request"}, status=400)
+
 @csrf_exempt
 def send_newsletter(request):
     subscribers = SubscriberUser.objects.all()
