@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ------------------ Security ------------------
 SECRET_KEY = 'django-insecure-1vk*65f)9vy(934#$#ce#f^n7bryy)vkrdjz0#u-mesc--6y79'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
 
@@ -35,7 +35,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',   # <- CORS should be before CommonMiddleware
+    'corsheaders.middleware.CorsMiddleware',  
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
