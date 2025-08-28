@@ -42,7 +42,7 @@ const StartProjectHero = () => {
             Book Free Consultation
           </a>
           <a
-            href="#services"
+            href="/services"
             className="border border-cyan-400 text-cyan-400 px-6 py-3 rounded-full text-lg font-semibold hover:bg-cyan-400 hover:text-black transition"
           >
             View Our Services

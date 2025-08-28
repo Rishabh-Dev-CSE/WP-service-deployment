@@ -44,7 +44,7 @@ class TopClients(models.Model):
     address = models.TextField(max_length=100)
     contact_number = models.IntegerField()
     citizen = models.CharField(default="India")
-    client_website = models.CharField(max_length=255, default=" ")
+    client_website = models.CharField(max_length=255, default="")
     business_type = models.CharField(default="Individual")
 
 

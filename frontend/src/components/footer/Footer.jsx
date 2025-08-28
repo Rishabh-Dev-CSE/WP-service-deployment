@@ -190,7 +190,7 @@ const Footer = () => {
           text-center
         "
         >
-          <a href="/about" className="hover:text-cyan-400 transition text-sm sm:text-base">About Us</a>
+          <a href="/about-us" className="hover:text-cyan-400 transition text-sm sm:text-base">About Us</a>
           <a href="/services" className="hover:text-cyan-400 transition text-sm sm:text-base">Services</a>
           <a href="/case-studies" className="hover:text-cyan-400 transition text-sm sm:text-base">Case Studies</a>
           <a href="/blog" className="hover:text-cyan-400 transition text-sm sm:text-base">Blog</a>

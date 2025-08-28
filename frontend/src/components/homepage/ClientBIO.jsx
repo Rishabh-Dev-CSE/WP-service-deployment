@@ -13,10 +13,25 @@ const TopClientsCarousel = () => {
   useEffect(() => {
     const fetchClients = async () => {
       try {
-        const res = await fetch("https://wp-service-deployment-1.onrender.com/top-clients");
-        const data = await res.json();
+        const res = await fetch("https://wp-service-deployment-1.onrender.com/api/top-clients", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "X": "12345-abcdef",
+          },
+        });
 
-        const fixedClients = (data.clients || []).map((client) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        console.log("Fetched clients data:", data); // ✅ Debugging line
+
+        // ✅ Handle both { clients: [...] } and plain [...] responses
+        const clientsArray = Array.isArray(data) ? data : data.clients || [];
+
+        const fixedClients = clientsArray.map((client) => {
           let fixedImage = client.image;
           if (fixedImage && fixedImage.includes("/media/media/")) {
             fixedImage = fixedImage.replace("/media/media/", "/media/");

@@ -75,19 +75,19 @@ const EnquiryForm = () => {
   const fields = [
     {
       name: "name",
-      placeholder: "e.g. your anme ",
+      placeholder: "Your name ",
       type: "text",
       icon: <FaUser className="absolute left-3 top-3.5 text-cyan-400" />,
     },
     {
       name: "email",
-      placeholder: "you@example.com",
+      placeholder: "e.g. business@gmail.com",
       type: "email",
       icon: <FaEnvelope className="absolute left-3 top-3.5 text-cyan-400" />,
     },
     {
       name: "company",
-      placeholder: "Your brand or company (optional)",
+      placeholder: "Your brand or company",
       type: "text",
       icon: <FaBuilding className="absolute left-3 top-3.5 text-cyan-400" />,
     },
@@ -210,7 +210,7 @@ const EnquiryForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows={5}
-              placeholder="Tell us about your project..."
+              placeholder="Tell us about your business project..."
               className="w-full bg-[#23233a] border border-[#33324a] text-white pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-1 focus:ring-cyan-400 resize-none"
               required
             />

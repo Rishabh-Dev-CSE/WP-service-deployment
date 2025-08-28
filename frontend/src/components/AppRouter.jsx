@@ -13,6 +13,8 @@ import AppServiceRoute from "./services/app-services/AppServiceRoute";
 import SocialMediaRoute from "./services/social-media/SocialMediaRoute";
 import ComingSoonPageRoute from "./comingsoon/ComingSoonRoute";
 import PricingRoute from "./pricing/PricingRoute";
+import AdminPanelDashboard from "./admindashboard/AdminRoute";
+import SignUpAndLogin from "./signup-and-login/SignupAndLogin";
 
 
 const AppRouter = () => {
@@ -26,6 +28,9 @@ const AppRouter = () => {
                 <Route path="/about-us" element={<AboutRoute />} />
                 <Route path="/contact" element={<ContactRoute />} />
                 <Route path="/services" element={<ServicePageRoute />} />
+                {/* signup and login routes */}
+
+                <Route path="/signup-&-login" element={<SignUpAndLogin />} />
                 {/* Theme routes  */}
                 <Route path="/services/seo-service" element={<SeoRoute />} />
                 <Route path="/services/website-development-theme" element={<WebsiteRoute /> } />
@@ -33,6 +38,7 @@ const AppRouter = () => {
                 <Route path="/services/social-media-service" element={<SocialMediaRoute />} />
                 <Route path="/service/pricing" element={<PricingRoute />} />
                 <Route path="/coming-soon" element={<ComingSoonPageRoute />} />
+                <Route path="/super-admin-dashboard" element={<AdminPanelDashboard />} />
 
             </Routes>
 

@@ -4,6 +4,7 @@ import Footer from "../footer/Footer";
 import AboutHero from "./AboutHero";
 import MissionSection from "./MissionSection";
 import MeetOurTeam from "./TeamBio";
+// import VideoGeneratorUI from "./ai";
 
 
 const AboutRoute = () => {
@@ -13,6 +14,7 @@ const AboutRoute = () => {
         <AboutHero />
         <MissionSection />
         <MeetOurTeam />
+        {/* <VideoGeneratorUI /> */}
         <Footer />
 
         </>

@@ -1,24 +1,20 @@
 import os
+import base64
 from pathlib import Path
+from decouple import config
+from corsheaders.defaults import default_headers
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+# ------------------ Base Directory ------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# ------------------ Security ------------------
 SECRET_KEY = 'django-insecure-1vk*65f)9vy(934#$#ce#f^n7bryy)vkrdjz0#u-mesc--6y79'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ALLOWED_HOSTS = ["*"]
 
-ALLOWED_HOSTS = ['*']
 
-
-# Application definition
-
+# ------------------ Installed Apps ------------------
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -26,25 +22,39 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third-party
     'rest_framework',
     'corsheaders',
+
+    # Local apps
     'reactapp',
 ]
 
+# ------------------ Middleware ------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',   # <- CORS should be before CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CORS_ALLOW_ALL_ORIGINS = True  # Development only
+
+# ------------------ CORS ------------------
+
+CORS_ALLOW_ALL_ORIGINS = True   # Dev only, restrict in prod
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "X",
+]
+   # Dev only, restrict in prod
+
 ROOT_URLCONF = 'connectreact.urls'
 
+
+# ------------------ Templates ------------------
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -63,9 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'connectreact.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
+# ------------------ Database ------------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -74,68 +82,64 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
-
+# ------------------ Password Validators ------------------
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.2/topics/i18n/
-
+# ------------------ Internationalization ------------------
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
+# ------------------ Static & Media ------------------
 STATIC_URL = '/static/'
-
-# Deployment ke liye
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Agar development me ho toh
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-#media root files 
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
+# ------------------ Default Primary Key ------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# send news letter  to all subscribers
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "rishabhshaky887415@gmail.com"
-EMAIL_HOST_PASSWORD = "Rishabh@933662"
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# ------------------ Secure API Key (for signing / encryption) ------------------
+SECURE_API_KEY_B64 = os.environ.get("SECURE_API_KEY_B64")
 
+if not SECURE_API_KEY_B64:
+    # ⚠️ Development fallback (use env var in production)
+    # Example for generating one:
+    #   python - <<'PY'
+    #   import os, base64
+    #   print(base64.b64encode(os.urandom(32)).decode())
+    #   PY
+    SECURE_API_KEY = base64.b64decode("REPLACE_WITH_REAL_BASE64_32_BYTES")
+else:
+    SECURE_API_KEY = base64.b64decode(SECURE_API_KEY_B64)
+
+
+# ------------------ Django REST Framework ------------------
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": (
+        "rest_framework.renderers.JSONRenderer",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+}
+
+# settings.py ke end me
+SECRET_API_KEY = SECRET_API_KEY = "12345-abcdef" # os.getenv("SECRET_API_KEY", "local-test-key-123")
