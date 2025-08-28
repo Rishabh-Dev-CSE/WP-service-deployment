@@ -50,7 +50,6 @@ class TopClients(models.Model):
 
     def __str__(self):
         return self.client_name
-    
     def save(self,*args,**kwargs):
         try:
             old = TopClients.objects.get(id=self.id)
@@ -65,3 +64,4 @@ class TopClients(models.Model):
         if self.image and os.path.isfile(self.image.path):
             os.remove(self.image.path)
         super().delete(*args, **kwargs)
+
