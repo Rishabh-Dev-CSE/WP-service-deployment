@@ -26,9 +26,9 @@ const TopClientsCarousel = () => {
         }
 
         const data = await res.json();
-        console.log("Fetched clients data:", data); // ✅ Debugging line
+        console.log("Fetched clients data:", data);
 
-        // ✅ Handle both { clients: [...] } and plain [...] responses
+        // ✅ Handle both { clients: [...] } and plain [...]
         const clientsArray = Array.isArray(data) ? data : data.clients || [];
 
         const fixedClients = clientsArray.map((client) => {
@@ -50,15 +50,8 @@ const TopClientsCarousel = () => {
 
   // 🔹 Disable body scroll when modal is open
   useEffect(() => {
-    if (selectedClient) {
-      document.body.style.overflow = "hidden"; // disable scroll
-    } else {
-      document.body.style.overflow = "auto"; // enable scroll back
-    }
-
-    return () => {
-      document.body.style.overflow = "auto"; // cleanup
-    };
+    document.body.style.overflow = selectedClient ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
   }, [selectedClient]);
 
   return (
@@ -98,23 +91,30 @@ const TopClientsCarousel = () => {
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
-              className="flex items-center bg-[#11152d] rounded-2xl shadow-lg p-6 hover:shadow-cyan-400/20 transition cursor-pointer w-full"
+              className="flex flex-col items-center bg-[#11152d] rounded-2xl shadow-lg p-6 hover:shadow-cyan-400/20 transition cursor-pointer w-full"
               onClick={() => setSelectedClient(client)}
             >
-              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-cyan-400 flex-shrink-0">
+              {/* Client Image */}
+              <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-cyan-400 shadow-lg">
                 <img
                   src={client.image}
                   alt={client.client_name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="ml-6 text-left">
+
+              {/* Client Info */}
+              <div className="mt-4 text-center">
                 <h3 className="text-xl font-semibold">{client.client_name}</h3>
                 <p className="text-cyan-400 text-sm">{client.position || "Client"}</p>
-                <p className="text-gray-400 text-xs mt-1">{client.education}</p>
-                <p className="text-gray-300 text-sm mt-2 leading-relaxed line-clamp-2">
-                  {client.discription}
-                </p>
+                {client.education && (
+                  <p className="text-gray-400 text-xs mt-1">{client.education}</p>
+                )}
+                {client.discription && (
+                  <p className="text-gray-300 text-sm mt-3 leading-relaxed line-clamp-3">
+                    {client.discription}
+                  </p>
+                )}
               </div>
             </motion.div>
           </SwiperSlide>
