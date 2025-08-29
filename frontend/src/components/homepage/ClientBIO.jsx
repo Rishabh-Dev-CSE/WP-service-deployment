@@ -116,12 +116,21 @@ const TopClientsCarousel = () => {
       <AnimatePresence>
         {selectedClient && (
           <motion.div
-            className="fixed inset-0 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] bg-opacity-70 backdrop-blur-md flex justify-center items-center z-50 px-4"
+               className="fixed inset-0 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-50 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedClient(null)}
           >
+              <motion.div
+                          initial={{ scale: 0.8 }}
+                          animate={{ scale: 1 }}
+                          exit={{ scale: 0.8 }}
+                          transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                          className="relative max-w-3xl w-full mt-20"
+                          onClick={(e) => e.stopPropagation()}
+                          style={{ overflowY: "scroll", height: "80%" }}
+                        >
             {/* Glow Background */}
             <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-ping"></div>
@@ -164,7 +173,7 @@ const TopClientsCarousel = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {selectedClient.website}
+                 Website : <u className="text-cyan-400"> {selectedClient.company_name}</u>
                 </a>
 
               </div>
@@ -177,6 +186,7 @@ const TopClientsCarousel = () => {
                 </p>
               </div>
             </motion.div>
+          </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
