@@ -54,7 +54,7 @@ const FeatureSection = () => {
           >
             <div className="w-full h-full rounded-[1.7rem] overflow-hidden">
               <img
-                src="/src/assets/feature/feature1.jpeg"
+                src="/feature/feature1.jpeg"
                 alt="Fast Performance"
                 className="w-full h-full object-cover"
               />
@@ -91,7 +91,7 @@ const FeatureSection = () => {
           >
             <div className="w-full h-full rounded-[1.7rem] overflow-hidden">
               <img
-                src="/src/assets/feature/feature2.jpeg"
+                src="/feature/feature2.jpeg"
                 alt="Smart Notifications"
                 className="w-full h-full object-cover"
               />

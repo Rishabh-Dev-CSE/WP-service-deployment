@@ -65,13 +65,16 @@ const Contact = () => {
                             href="mailto:rishabhshakya9336@gmail.com"
                             className="hover:text-white transition"
                         >
-                            rishabhshakya9336@gmail.com
+                            rishabh9336@gmail.com
                         </a>
                     </div>
                     <div className="flex items-center gap-2">
                         <LuPhone className="text-cyan-400" />
                         <a href="tel:+91 9336621975">
                             <span>+91 9336621975</span>
+                        </a>
+                         <a href="tel:+91 9264983351">
+                            <span>+91 9264983351</span>
                         </a>
                     </div>
                 </motion.div>

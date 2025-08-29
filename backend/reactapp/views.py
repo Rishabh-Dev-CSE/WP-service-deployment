@@ -72,6 +72,7 @@ def topclients(request):
                 "website": client.client_website,
                 "image": request.build_absolute_uri(client.image.url) if client.image else None
             })
+            print(data[0]['website'])
         return JsonResponse({"clients": data}, safe=False)
     return JsonResponse({"error": "Invalid request"}, status=400)
 

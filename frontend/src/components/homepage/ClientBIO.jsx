@@ -9,6 +9,8 @@ const TopClientsCarousel = () => {
   const [clients, setClients] = useState([]);
   const [selectedClient, setSelectedClient] = useState(null);
 
+
+
   // 🔹 Fetch clients from Django
   useEffect(() => {
     const fetchClients = async () => {
@@ -17,29 +19,19 @@ const TopClientsCarousel = () => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "X": "12345-abcdef",
+            "X": "12345-abcdef", // ✅ API key
           },
         });
 
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
+        if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
 
         const data = await res.json();
         console.log("Fetched clients data:", data);
 
-        // ✅ Handle both { clients: [...] } and plain [...]
-        const clientsArray = Array.isArray(data) ? data : data.clients || [];
+        // ✅ Handle { clients: [...] }
+        const clientsArray = data.clients || [];
 
-        const fixedClients = clientsArray.map((client) => {
-          let fixedImage = client.image;
-          if (fixedImage && fixedImage.includes("/media/media/")) {
-            fixedImage = fixedImage.replace("/media/media/", "/media/");
-          }
-          return { ...client, image: fixedImage };
-        });
-
-        setClients(fixedClients);
+        setClients(clientsArray);
       } catch (err) {
         console.error("Error fetching clients:", err);
       }
@@ -53,7 +45,7 @@ const TopClientsCarousel = () => {
     document.body.style.overflow = selectedClient ? "hidden" : "auto";
     return () => (document.body.style.overflow = "auto");
   }, [selectedClient]);
-
+  
   return (
     <section className="bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-16 px-4 sm:px-6 lg:px-12 relative z-100">
       <div className="max-w-6xl mx-auto text-center mb-10">
@@ -82,7 +74,6 @@ const TopClientsCarousel = () => {
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 3 },
         }}
         className="max-w-6xl mx-auto"
       >
@@ -106,13 +97,13 @@ const TopClientsCarousel = () => {
               {/* Client Info */}
               <div className="mt-4 text-center">
                 <h3 className="text-xl font-semibold">{client.client_name}</h3>
-                <p className="text-cyan-400 text-sm">{client.position || "Client"}</p>
-                {client.education && (
-                  <p className="text-gray-400 text-xs mt-1">{client.education}</p>
-                )}
-                {client.discription && (
+                <p className="text-cyan-400 text-sm">
+                  {client.company_name || "Client"}
+                </p>
+               
+                {client.description && (
                   <p className="text-gray-300 text-sm mt-3 leading-relaxed line-clamp-3">
-                    {client.discription}
+                    {client.description}
                   </p>
                 )}
               </div>
@@ -151,7 +142,7 @@ const TopClientsCarousel = () => {
                 ✕
               </button>
 
-              {/* Left Side (Image) */}
+              {/* Left Side (Image + Name) */}
               <div className="flex flex-col items-center justify-center">
                 <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg">
                   <img
@@ -160,27 +151,27 @@ const TopClientsCarousel = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
+                <p className="mt-2">Rating : ⭐⭐⭐⭐⭐ </p>
                 <h3 className="text-2xl font-bold mt-4">{selectedClient.client_name}</h3>
-                <p className="text-cyan-400 text-sm">{selectedClient.position || "Client"}</p>
-                <p className="text-gray-400 text-xs mt-1">{selectedClient.education}</p>
+                <p className="text-cyan-400 text-sm">{selectedClient.company_name}</p>
+               
+                  <a
+                    href={selectedClient.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 underline text-xs mt-1"
+                  >
+                    {selectedClient.website}
+                  </a>
+           
               </div>
 
               {/* Right Side (Details) */}
               <div className="overflow-y-auto pr-2 max-h-[70vh]">
                 <h4 className="text-xl font-semibold mb-3">About</h4>
                 <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                  {selectedClient.discription}
+                  {selectedClient.description}
                 </p>
-                {selectedClient.bio && (
-                  <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                    {selectedClient.bio}
-                  </p>
-                )}
-                {selectedClient.bio2 && (
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {selectedClient.bio2}
-                  </p>
-                )}
               </div>
             </motion.div>
           </motion.div>
