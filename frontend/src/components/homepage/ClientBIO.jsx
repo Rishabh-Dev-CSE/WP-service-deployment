@@ -45,7 +45,7 @@ const TopClientsCarousel = () => {
     document.body.style.overflow = selectedClient ? "hidden" : "auto";
     return () => (document.body.style.overflow = "auto");
   }, [selectedClient]);
-  
+
   return (
     <section className="bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-16 px-4 sm:px-6 lg:px-12 relative z-100">
       <div className="max-w-6xl mx-auto text-center mb-10">
@@ -100,7 +100,7 @@ const TopClientsCarousel = () => {
                 <p className="text-cyan-400 text-sm">
                   {client.company_name || "Client"}
                 </p>
-               
+
                 {client.description && (
                   <p className="text-gray-300 text-sm mt-3 leading-relaxed line-clamp-3">
                     {client.description}
@@ -154,16 +154,19 @@ const TopClientsCarousel = () => {
                 <p className="mt-2">Rating : ⭐⭐⭐⭐⭐ </p>
                 <h3 className="text-2xl font-bold mt-4">{selectedClient.client_name}</h3>
                 <p className="text-cyan-400 text-sm">{selectedClient.company_name}</p>
-               
-                  <a
-                    href={selectedClient.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 underline text-xs mt-1"
-                  >
-                    {selectedClient.website}
-                  </a>
-           
+
+                <a
+                  href={
+                    selectedClient.website.startsWith("http")
+                      ? selectedClient.website
+                      : `https://${selectedClient.website}`
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {selectedClient.website}
+                </a>
+
               </div>
 
               {/* Right Side (Details) */}
