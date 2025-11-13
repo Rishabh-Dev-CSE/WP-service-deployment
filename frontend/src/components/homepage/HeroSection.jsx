@@ -16,6 +16,7 @@ const HeroSection = () => {
         <title>Velorax | Creative Digital Studio - Web, SEO & Branding</title>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
      crossorigin="anonymous"></script>
+        <meta name="google-adsense-account" content="ca-pub-8034689723711025" />
         <meta
           name="description"
           content="Velorax is a creative digital studio turning imagination into extraordinary digital reality. We specialize in web development, SEO, branding, and captivating design experiences."
