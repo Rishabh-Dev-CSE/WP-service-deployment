@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { auth, signInWithGoogle, logout } from "../../firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
@@ -96,6 +97,12 @@ const Navbar = () => {
       className="fixed top-0 w-full z-50 backdrop-blur-md bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white shadow-md"
       style={{ zIndex: 1000 }}
     >
+      <Helmet>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-8034689723711025"
+          />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <motion.div
