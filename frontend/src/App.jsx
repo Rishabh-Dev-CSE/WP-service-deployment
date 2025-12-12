@@ -7,7 +7,6 @@ import AdUnit from "./components/navbar/AdUnit";
 const App = () => {
   return (
     <>
-      <AdUnit />
       <AppRouter />
     </>
   )

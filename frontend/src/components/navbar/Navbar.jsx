@@ -11,7 +11,6 @@ const navLinks = [
   { name: "Services", path: "/services" },
   { name: "About", path: "/about-us" },
   { name: "Contact", path: "/contact" },
-  // {name:'Help', path:"/help"},
   {name: "Pricing", path:"/service/pricing"},
 ];
 
@@ -133,10 +132,10 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               className="relative group transition-all duration-300"
             >
-              <Link to={link.path}>
+              <a href={link.path}>
                 {link.name}
                 <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full"></span>
-              </Link>
+              </a>
             </motion.div>
           ))}
         </motion.nav>
@@ -212,13 +211,13 @@ const Navbar = () => {
             >
               {navLinks.map((link, index) => (
                 <motion.div key={index} variants={mobileNavItem}>
-                  <Link
-                    to={link.path}
+                  <a
+                    href={link.path}
                     onClick={() => setIsMobileOpen(false)}
                     className="text-white hover:text-cyan-400 transition"
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
 
