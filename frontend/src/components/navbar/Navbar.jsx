@@ -11,8 +11,8 @@ const navLinks = [
   { name: "Services", path: "/services" },
   { name: "About", path: "/about-us" },
   { name: "Contact", path: "/contact" },
-  {name:'Help', path:"/help"},
-  {name: "Pricing", path:"/service/pricing"},
+  { name: 'Help', path: "/help" },
+  { name: "Pricing", path: "/service/pricing" },
 ];
 
 // Framer Motion Variants
@@ -102,7 +102,19 @@ const Navbar = () => {
         <meta
           name="google-adsense-account"
           content="ca-pub-8034689723711025"
-          />
+        />
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+          crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-format="fluid"
+          data-ad-layout-key="-fb+5w+4e-db+86"
+          data-ad-client="ca-pub-8034689723711025"
+          data-ad-slot="4638788355"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({ });
+        </script>
       </Helmet>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
@@ -164,26 +176,23 @@ const Navbar = () => {
         </motion.div>
 
         {/* Hamburger */}
-        
+
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
             className="focus:outline-none relative w-6 h-6"
           >
             <span
-              className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${
-                isMobileOpen ? "rotate-45 top-2.5" : "top-1"
-              }`}
+              className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${isMobileOpen ? "rotate-45 top-2.5" : "top-1"
+                }`}
             ></span>
             <span
-              className={`block absolute h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
-                isMobileOpen ? "opacity-0" : "top-3"
-              }`}
+              className={`block absolute h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${isMobileOpen ? "opacity-0" : "top-3"
+                }`}
             ></span>
             <span
-              className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${
-                isMobileOpen ? "-rotate-45 top-2.5" : "top-5"
-              }`}
+              className={`block absolute h-0.5 w-6 bg-white transform transition duration-300 ease-in-out ${isMobileOpen ? "-rotate-45 top-2.5" : "top-5"
+                }`}
             ></span>
           </button>
         </div>
