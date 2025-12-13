@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const AboutHero = () => {
   return (
     <section className="relative bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-28 px-6 flex items-center justify-center min-h-[70vh] overflow-hidden">
+      <Helmet>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+          crossorigin="anonymous"></script>
+      </Helmet>
 
       {/* Animated Background Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
