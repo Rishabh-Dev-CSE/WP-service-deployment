@@ -1,4 +1,3 @@
-"use client";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -73,7 +72,7 @@ export default function PricingPlans() {
           : "bg-white/5 border-white/10 hover:shadow-cyan-500/30 hover:border-cyan-400/50"
         }`}
     >
-      
+
       <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
       <p className="text-cyan-400 text-3xl font-bold mb-4">{plan.price}</p>
       <p className="text-gray-300 text-sm mb-6">{plan.tagline}</p>
@@ -101,6 +100,10 @@ export default function PricingPlans() {
 
   return (
     <section className="w-full mt-15 py-20 bg-gradient-to-b from-[#0a0f1c] to-[#0f172a] text-white">
+     <Helmet> 
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+     crossorigin="anonymous"></script>
+     </Helmet>
       {/* Heading */}
       <div className="text-center mb-14">
         <motion.h2
