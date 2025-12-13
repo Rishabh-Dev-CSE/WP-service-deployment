@@ -102,8 +102,6 @@ const Navbar = () => {
           name="google-adsense-account"
           content="ca-pub-8034689723711025"
         />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
-          crossorigin="anonymous"></script>
       </Helmet>
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
