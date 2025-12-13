@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePageRoute from "./homepage/HomePageRoute";
@@ -8,7 +9,6 @@ import ContactRoute from "./contact/ContactRoute";
 import SeoRoute from "./services/seoservice/SeoRoute";
 import ServicePageRoute from "./services/servicespage/ServicepageRoute";
 import WebsiteRoute from "./services/wesite-service/WebsiteRoute";
-// import NatureTemplate from "./services/wesite-service/theames/nature/nature";
 import AppServiceRoute from "./services/app-services/AppServiceRoute";
 import SocialMediaRoute from "./services/social-media/SocialMediaRoute";
 import ComingSoonPageRoute from "./comingsoon/ComingSoonRoute";

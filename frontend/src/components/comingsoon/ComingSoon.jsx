@@ -7,14 +7,15 @@ export default function ComingSoonHero() {
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white flex items-center justify-center p-6">
       <Helmet>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
-     crossorigin="anonymous"></script>
+          crossorigin="anonymous"></script>
+
       </Helmet>
       {/* subtle background ornaments */}
       <BackgroundOrnaments />
 
       <div className="relative z-10 w-full max-w-4xl text-center select-none">
         {/* Top tiny header */}
-      
+
 
         {/* Main card stack */}
         <div className="relative mx-auto w-[min(92vw,880px)]">
@@ -97,17 +98,17 @@ function FloatingDecor() {
       {/* left circle */}
       <motion.div
         {...float(0.2)}
-        className="absolute -left-6 top-1/4 h-10 w-10 rounded-full bg-[#6c63ff]/90 shadow-[0_10px_24px_rgba(0,0,0,0.25)]"/>
+        className="absolute -left-6 top-1/4 h-10 w-10 rounded-full bg-[#6c63ff]/90 shadow-[0_10px_24px_rgba(0,0,0,0.25)]" />
 
       {/* top small dot */}
       <motion.div
         {...float(0.6)}
-        className="absolute -top-4 left-10 h-4 w-4 rounded-full bg-[#8581ff]"/>
+        className="absolute -top-4 left-10 h-4 w-4 rounded-full bg-[#8581ff]" />
 
       {/* right big circle */}
       <motion.div
         {...float(0.3)}
-        className="absolute -right-6 top-6 h-14 w-14 rounded-full bg-[#6c63ff]/90"/>
+        className="absolute -right-6 top-6 h-14 w-14 rounded-full bg-[#6c63ff]/90" />
 
       {/* bottom right ring */}
       <motion.div {...float(0.1)} className="absolute -right-4 bottom-6">
@@ -117,7 +118,7 @@ function FloatingDecor() {
       {/* bottom small dot */}
       <motion.div
         {...float(0.9)}
-        className="absolute right-24 -bottom-4 h-5 w-5 rounded-full bg-[#8581ff]"/>
+        className="absolute right-24 -bottom-4 h-5 w-5 rounded-full bg-[#8581ff]" />
 
       {/* inner subtle ring */}
       <motion.div {...float(0.4)} className="absolute left-1/3 -bottom-6">
