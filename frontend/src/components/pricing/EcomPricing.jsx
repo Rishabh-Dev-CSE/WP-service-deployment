@@ -97,6 +97,10 @@ export default function PricingPlans() {
 
   return (
     <section className="w-full mt-15 py-20 bg-gradient-to-b from-[#0a0f1c] to-[#0f172a] text-white">
+     <Helmet> 
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+     crossorigin="anonymous"></script>
+     </Helmet>
       {/* Heading */}
       <div className="text-center mb-14">
         <motion.h2
