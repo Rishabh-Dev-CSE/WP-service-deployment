@@ -6,8 +6,7 @@ const AboutHero = () => {
   return (
     <section className="relative bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-28 px-6 flex items-center justify-center min-h-[70vh] overflow-hidden">
       <Helmet>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
-          crossorigin="anonymous"></script>
+       
           
       </Helmet>
 
@@ -27,7 +26,7 @@ const AboutHero = () => {
         className="relative z-10 text-center max-w-3xl"
       >
         <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-          <span className="text-cyan-400">WP</span> Service
+          <span className="text-cyan-400">VeloraX</span> Service
           <br />
           <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
             Code Meets Velocity 🚀
