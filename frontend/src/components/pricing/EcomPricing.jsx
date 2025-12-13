@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Helmet } from "react-helmet";
 
 const plans = [
   {
@@ -69,6 +70,10 @@ export default function PricingPlans() {
           : "bg-white/5 border-white/10 hover:shadow-cyan-500/30 hover:border-cyan-400/50"
         }`}
     >
+      <Helmet>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+          crossorigin="anonymous"></script>
+      </Helmet>
       <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
       <p className="text-cyan-400 text-3xl font-bold mb-4">{plan.price}</p>
       <p className="text-gray-300 text-sm mb-6">{plan.tagline}</p>

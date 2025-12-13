@@ -2,10 +2,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaRocket, FaHandshake, FaCheckCircle } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const StartProjectHero = () => {
   return (
     <section className="w-full py-24 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+      <Helmet>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+     crossorigin="anonymous"></script>
+      </Helmet>
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
         <motion.h1

@@ -1,6 +1,7 @@
 import React from "react";
 import { LuMail, LuPhone, LuGithub, LuLinkedin, LuTwitter } from "react-icons/lu";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -14,6 +15,10 @@ const fadeInUp = {
 const Contact = () => {
     return (
         <section className="relative bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#952ca3] text-white py-28 px-6 flex items-center justify-center min-h-20 overflow-hidden">
+            <Helmet>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+                    crossorigin="anonymous"></script>
+            </Helmet>
             {/* Decorative background blobs */}
             <motion.div
                 animate={{ y: [0, 30, 0] }}
@@ -73,7 +78,7 @@ const Contact = () => {
                         <a href="tel:+91 9336621975">
                             <span>+91 9336621975</span>
                         </a>
-                         <a href="tel:+91 9264983351">
+                        <a href="tel:+91 9264983351">
                             <span>+91 9264983351</span>
                         </a>
                     </div>

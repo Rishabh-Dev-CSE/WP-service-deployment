@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 export default function ComingSoonHero() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white flex items-center justify-center p-6">
+      <Helmet>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+     crossorigin="anonymous"></script>
+      </Helmet>
       {/* subtle background ornaments */}
       <BackgroundOrnaments />
 

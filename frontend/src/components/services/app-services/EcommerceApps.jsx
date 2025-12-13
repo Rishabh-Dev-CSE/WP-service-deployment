@@ -58,10 +58,12 @@ export default function EcommerceApps() {
                 <meta property="og:type" content="article" />
                 <meta property="og:site_name" content="AppTemplateHub" />
                 <meta name="author" content="AppTemplateHub Team" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
+                    crossorigin="anonymous"></script>
             </Helmet>
 
             <CategorySection
-            
+
                 category="Ecommerce & Shopping Apps"
                 templates={templates}
                 color="from-pink-500 to-red-400"
