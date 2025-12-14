@@ -6,7 +6,7 @@ const teamMembers = [
     id: 1,
     name: "Rishabh Suryavanshi",
     position: "CEO & Founder",
-    education: "Btech , Oxford University",
+    education: "Btech , integral university",
     bio: "Focused on strategic brand growth and community building. (FullStack Developer)",
     bio2:
       ":- Rishabh is a visionary leader with over 5 years of experience in full-stack development, tech entrepreneurship, and strategic product design. He has worked with global startups and enterprise clients, helping them scale through innovative digital solutions. His education from Oxford has played a key role in shaping his analytical thinking and global business mindset. Rishabh is known for his ethical leadership and dedication to user-focused product development. Under his guidance, the company continues to grow with a focus on long-term value and impact.",
@@ -26,7 +26,7 @@ const teamMembers = [
     id: 3,
     name: "Yash Nigam",
     position: "CTO",
-    education: "M.Tech, IIT Bombay",
+    education: "M.Tech, IIT Kanpur",
     bio: "Expert in blockchain technology and cloud architecture.",
     bio2:
       ":- Yash brings a decade of experience in architecting secure, scalable, and decentralized platforms. A gold medalist from IIT Bombay, he has led core tech teams in both fintech and healthtech domains. His knowledge of blockchain frameworks and cloud systems like AWS, GCP, and Azure has helped shape the backbone of our technology stack. Yash is also an advisor to multiple early-stage startups and a keynote speaker at tech conferences. He ensures that all tech strategies are future-proof, compliant, and ready for global scale.",

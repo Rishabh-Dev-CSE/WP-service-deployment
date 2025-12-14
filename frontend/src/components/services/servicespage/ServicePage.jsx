@@ -8,12 +8,12 @@ const ServicePage = () => {
     <>
       {/* ✅ SEO Tags */}
       <Helmet>
-        <title>WP Services - Fraud Prevention & AI Solutions</title>
+        <title>Velorax Services page</title>
         <meta
           name="description"
-          content="Discover WP Services including fraud protection, AI/ML compliance, and social risk analysis."
+          content="Discover VeloraX Services including fraud protection, AI/ML compliance, and social risk analysis."
         />
-        <meta name="keywords" content="WP Services, Fraud, AI Compliance, Machine Learning, Social Fraud" />
+        <meta name="keywords" content="VeloraX Services, Fraud, AI Compliance, Machine Learning, Social Fraud" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8034689723711025"
@@ -73,7 +73,7 @@ const ServicePage = () => {
             className="relative z-10 text-center max-w-3xl"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-              <span className="text-cyan-400">WP</span> Service
+              <span className="text-cyan-400">Velorax</span> Service
             </h1>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-tight">

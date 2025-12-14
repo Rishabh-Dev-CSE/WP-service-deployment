@@ -24,12 +24,13 @@ const services = [
     path: "/coming-soon"
   },
   {
-    name : "Software Service",
+    name: "Software Service",
     path: '/coming-soon'
   },
   {
-    name:"Retaurants QR Menu",
-    path : "/coming-soon"
+    name: "Retaurants QR Menu",
+    path: "/coomig-soon",
+    anchor_path: 'https://restaurantsqr.netlify.app/'
   }
 ];
 
@@ -62,21 +63,34 @@ export default function ServicesPageSidebar() {
 
           {services.map((service, index) => (
             <li key={index}>
-              <Link
-                to={service.path}
-                className={`block transition-colors duration-200 ${location.pathname === service.path
-                    ? "text-cyan-400 font-semibold"
-                    : "text-white hover:text-cyan-300"
-                  }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {service.name}
-              </Link>
+              {service.anchor_path ? (
+                <a
+                  href={service.anchor_path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block transition-colors duration-200 text-white hover:text-cyan-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {service.name}
+                </a>
+              ) : (
+                <Link
+                  to={service.path}
+                  className={`block transition-colors duration-200 ${location.pathname === service.path
+                      ? "text-cyan-400 font-semibold"
+                      : "text-white hover:text-cyan-300"
+                    }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {service.name}
+                </Link>
+              )}
             </li>
           ))}
+
         </ul>
       </aside>
-
+      
       {/* Overlay for mobile */}
       {isOpen && (
         <div
