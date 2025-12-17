@@ -1,7 +1,6 @@
 import os
 import base64
 from pathlib import Path
-from decouple import config
 from corsheaders.defaults import default_headers
 
 
