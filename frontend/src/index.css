@@ -21,3 +21,21 @@ body,html{
 .animate-fade-in-slide {
   animation: fadeInSlide 1s ease-out forwards;
 }
+
+/* SOFT HERO IMAGE COLLAPSE (VISIBLE BUT BLENDED) */
+.hero-mask-soft {
+  -webkit-mask-image: radial-gradient(
+    circle at 70% 50%,
+    rgba(0,0,0,1) 60%,
+    rgba(0,0,0,0.85) 72%,
+    rgba(0,0,0,0.4) 85%,
+    rgba(0,0,0,0) 100%
+  );
+  mask-image: radial-gradient(
+    circle at 70% 50%,
+    rgba(0,0,0,1) 60%,
+    rgba(0, 0, 0, 0.623) 72%,
+    rgba(0,0,0,0.4) 85%,
+    rgba(0,0,0,0) 100%
+  );
+}

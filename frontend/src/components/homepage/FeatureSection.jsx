@@ -22,7 +22,7 @@ const phoneVariants = {
 
 const FeatureSection = () => {
   return (
-    <section className="w-full py-24 bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+    <section className="w-full py-24  bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-12">
 
         {/* Heading */}

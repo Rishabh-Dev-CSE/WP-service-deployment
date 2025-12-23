@@ -47,7 +47,7 @@ const TopClientsCarousel = () => {
   }, [selectedClient]);
 
   return (
-    <section className="bg-gradient-to-b from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-16 px-4 sm:px-6 lg:px-12 relative z-100">
+    <section id="home" className="relative w-full py-20 lg:py-28 bg-gradient-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] text-white overflow-hidden">
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-cyan-400 mb-4">
           Our Top Listed Clients
@@ -131,9 +131,6 @@ const TopClientsCarousel = () => {
                           onClick={(e) => e.stopPropagation()}
                           style={{ overflowY: "scroll", height: "80%" }}
                         >
-            {/* Glow Background */}
-            <div className="absolute top-0 left-0 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-ping"></div>
 
             <motion.div
               className="bg-[#0f0a3d] rounded-2xl p-8 text-left max-w-4xl w-full text-white relative grid grid-cols-1 md:grid-cols-2 gap-8"
